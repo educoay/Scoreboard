@@ -1,2 +1,2 @@
-# scoreboard
-Arduino powered scoreboard with Xbee wireless controller
+# Scoreboard
+Arduino powered scoreboard with wired controller
