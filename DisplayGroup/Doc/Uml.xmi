@@ -1,0 +1,1785 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<XMI verified="false" xmi.version="1.2" timestamp="2013-02-10T16:13:26" xmlns:UML="http://schema.omg.org/spec/UML/1.3">
+ <XMI.header>
+  <XMI.documentation>
+   <XMI.exporter>umbrello uml modeller http://uml.sf.net</XMI.exporter>
+   <XMI.exporterVersion>1.6.1</XMI.exporterVersion>
+   <XMI.exporterEncoding>UnicodeUTF8</XMI.exporterEncoding>
+  </XMI.documentation>
+  <XMI.metamodel xmi.version="1.3" href="UML.xml" xmi.name="UML"/>
+ </XMI.header>
+ <XMI.content>
+  <UML:Model isSpecification="false" isAbstract="false" isLeaf="false" xmi.id="m1" isRoot="false" name="Modello UML">
+   <UML:Namespace.ownedElement>
+    <UML:Stereotype visibility="public" isSpecification="false" namespace="m1" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="folder" name="folder"/>
+    <UML:Stereotype visibility="public" isSpecification="false" namespace="m1" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="datatype" name="datatype"/>
+    <UML:Stereotype visibility="public" isSpecification="false" namespace="m1" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="constructor" name="constructor"/>
+    <UML:Stereotype visibility="public" isSpecification="false" namespace="m1" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="friend" name="friend"/>
+    <UML:Stereotype visibility="public" isSpecification="false" namespace="m1" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="virtual" name="virtual"/>
+    <UML:Model stereotype="folder" visibility="public" isSpecification="false" namespace="m1" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="Logical View" name="Logical View">
+     <UML:Namespace.ownedElement>
+      <UML:Package stereotype="folder" visibility="public" isSpecification="false" namespace="Logical View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="Datatypes" name="Datatypes">
+       <UML:Namespace.ownedElement>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="5COFUwATAMva" name="int"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="4HmByRHCxC5C" name="char"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="ZDS4btCg5auX" name="bool"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="W4ygOrFQ81c5" name="float"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="QrHO3KYcXyh9" name="double"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="rtnuShRwjPb6" name="short"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="HqWNp6SGxhc0" name="long"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="18bX6Iex9PpZ" name="unsigned int"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="7GWod7ssxPGk" name="unsigned short"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="Tg0RMaPNi0so" name="unsigned long"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="GWjOwYx1mTnQ" name="string"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" elementReference="htZKizVz1otq" isRoot="false" xmi.id="8uDkrfyVOJzR" name="const byte"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" elementReference="xYFaOtGSkNTp" isRoot="false" xmi.id="9Pbz2jh6GWwE" name="uint16_t*"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" elementReference="hkSdrCVNHp9R" isRoot="false" xmi.id="w0XfwY2MNzeJ" name="std::deque&lt; DisplayGroup >"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" elementReference="hkSdrCVNHp9R" isRoot="false" xmi.id="2k6adStHUAIM" name="std::vector&lt; Display >"/>
+        <UML:DataType stereotype="datatype" visibility="public" isSpecification="false" namespace="Datatypes" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="Nlb7bkNI1ykU" name="undef"/>
+       </UML:Namespace.ownedElement>
+      </UML:Package>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="htZKizVz1otq" name="byte"/>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="f6iQtSR5nQS2" name="String"/>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="xYFaOtGSkNTp" name="uint16_t"/>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="6H1guE8Is3CV" name="boolean"/>
+      <UML:Package visibility="public" isSpecification="false" namespace="Logical View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="QrzJwecl6SQc" name="std">
+       <UML:Namespace.ownedElement>
+        <UML:Class visibility="public" isSpecification="false" namespace="QrzJwecl6SQc" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="hkSdrCVNHp9R" name="vector"/>
+       </UML:Namespace.ownedElement>
+      </UML:Package>
+      <UML:Dependency visibility="public" isSpecification="false" namespace="Logical View" supplier="Nlb7bkNI1ykU" xmi.id="eG5igTILBlw3" client="elLW3OWsHf2T" name=""/>
+      <UML:Dependency visibility="public" isSpecification="false" namespace="Logical View" supplier="eG5igTILBlw3" xmi.id="pPb18X24xOEB" client="elLW3OWsHf2T" name=""/>
+      <UML:Dependency visibility="public" isSpecification="false" namespace="Logical View" supplier="eG5igTILBlw3" xmi.id="t3W0XwoT2wi4" client="Nlb7bkNI1ykU" name=""/>
+      <UML:Dependency visibility="public" isSpecification="false" namespace="Logical View" supplier="cJzIeD6WSxH3" xmi.id="R5cU1KYAIDc6" client="Nlb7bkNI1ykU" name=""/>
+      <UML:Dependency visibility="public" isSpecification="false" namespace="Logical View" supplier="eG5igTILBlw3" xmi.id="8diOoISkVK6R" client="Nlb7bkNI1ykU" name=""/>
+      <UML:Dependency visibility="public" isSpecification="false" namespace="Logical View" supplier="eG5igTILBlw3" xmi.id="Idbe3y8UM2Et" client="Nlb7bkNI1ykU" name=""/>
+      <UML:Dependency visibility="public" isSpecification="false" namespace="Logical View" supplier="eG5igTILBlw3" xmi.id="9ZOTZaM2FDDX" client="Nlb7bkNI1ykU" name=""/>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="I8fVgmOCsE3C" comment="@brief Group of 7-segments displays. Holds a vector of Display objects, updates every display&#xa;with the correct digit.&#xa;&#xa;This class represents a group of n 7-segments displays, which can show an n digits number.&#xa;Each group has a vector of displays, and a value to show, using all the displays.&#xa;The class take the address of the variable to monitor, and does all the computation to send&#xa;the i-th digit to the i-th display, with automatic zero padding on the heading and trailing&#xa;if the value to show uses less digits than the number of displays in the group.&#xa;If the value to show uses more digits than the number of displays in the group only the least&#xa;significant digits are showed.&#xa;&#xa;This class uses the STL library for Arduino, which can be found at&#xa;@htmlonly&#xa;&lt;a href=&quot;http://andybrown.me.uk/wk/2011/01/15/the-standard-template-library-stl-for-avr-with-c-streams/&quot;>&#xa;the-standard-template-library-stl-for-avr-with-c-streams &lt;/a>&#xa;@endhtmlonly&#xa;&#xa;@author Gionata Boccalini&#xa;@date   Jan 30, 2013" name="DisplayGroup">
+       <UML:Classifier.feature>
+        <UML:Attribute visibility="private" isSpecification="false" xmi.id="EoTLaWG1u8e0" type="2k6adStHUAIM" comment="Vector of 7-segments displays" name="_displays"/>
+        <UML:Attribute visibility="private" isSpecification="false" xmi.id="fiHZwDfD8Fhx" type="f6iQtSR5nQS2" comment="Name of the group" name="_name"/>
+        <UML:Attribute visibility="private" isSpecification="false" xmi.id="ovzrYhKkWn54" type="htZKizVz1otq" comment="Id of the DisplayGroup" name="_id"/>
+        <UML:Attribute visibility="private" isSpecification="false" xmi.id="HL5CRhA4NPeJ" type="9Pbz2jh6GWwE" comment="Address of the value to be monitored" name="_value"/>
+        <UML:Attribute visibility="private" isSpecification="false" xmi.id="cJViYAgK5fAd" type="htZKizVz1otq" comment="Number of display in the group" name="_nDisplay"/>
+        <UML:Attribute visibility="private" isSpecification="false" xmi.id="LSLpFQtUjxe8" type="htZKizVz1otq" comment="Bit order in every display" name="_bitOrder"/>
+        <UML:Attribute visibility="private" isSpecification="false" xmi.id="eoD2DrJn8mWe" type="6H1guE8Is3CV" comment="Enable flag" name="_enabled"/>
+        <UML:Operation stereotype="constructor" visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="JND4ISQ1XwCV" comment="Constructor.&#xa;&#xa;@param[in] name        Name of the DisplayGroup&#xa;@param[in] nDisplay    Number of display in the group&#xa;@param[in] id          Id of the DisplayGroup in the manager&#xa;@param[in] *value      Address of the value to be monitored&#xa;@param[in] digits[]    Array of 7-segments code for each digits [0-9]" name="DisplayGroup">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="auoh9j8RrluV" type="f6iQtSR5nQS2" value="" name="name"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="WIhOViZm5mqM" type="htZKizVz1otq" value="" name="nDisplay"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="EGLjDXClP0SX" type="htZKizVz1otq" value="" name="id"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="hYyXKt0o9gCc" type="9Pbz2jh6GWwE" value="" name="value"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="OlOSVFojV9Qg" type="8uDkrfyVOJzR" value="" name="digits[]"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="fdR2brZJOYog" comment="Default destructor." name="~ DisplayGroup"/>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="PoUWUe9rQXJv" comment="Scans the value to be showed and count how many digits must be sent to the displays.&#xa;The count is made by dividing and considering the remainder of divisions by 10, until&#xa;the quotient is zero or there are no display available in the group any more.&#xa;The method does automatic padding (filling) with zeros when needed in the heading and&#xa;trailing of the displays vector.&#xa;&#xa;@return -1     If _nDisplay is equal to zero&#xa;@return -2     If _value is NULL&#xa;@return -3     If the whole value cannot be displayed with the number of displays in&#xa;               the group&#xa;@return  0     On success" name="update">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter kind="return" xmi.id="k5dEC1upeKsG" type="5COFUwATAMva"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="9RXVxJBK7dra" comment="&#xa;@return The unique id of the DisplayGroup in the manager" name="getId">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter kind="return" xmi.id="I0RgViZGlASx" type="htZKizVz1otq"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="CKnqed4m2ZH0" comment="&#xa;@return The name of the DisplayGroup" name="getName">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter kind="return" xmi.id="sRIy29WK7vyd" type="f6iQtSR5nQS2"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="bYrMgJJsd4hG" comment="&#xa;@return The number of display in the group" name="getDisplayNumber">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter kind="return" xmi.id="hj2kJHi9i05l" type="htZKizVz1otq"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="8Z3FU0q5WhRC" comment="&#xa;@return The bit order in every display" name="getBitOrder">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter kind="return" xmi.id="0j5cnmsTVsBm" type="htZKizVz1otq"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="9tuqrxbzXcD1" comment="&#xa;@param[in] bitOrder    The bit order in every display. Can LSBFIRST or MSBFIRST,&#xa;                       as in Arduino specification" name="setBitOrder">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="c356lWJjDOJ1" type="htZKizVz1otq" value="" name="bitOrder"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="8BSb3dMBWE1L" comment="Set the enable flag&#xa;@param enabled         True to enable the group or false to disable it. All the&#xa;                       segments will be off." name="setEnabled">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="BaJiCWknXptG" type="6H1guE8Is3CV" value="" name="enabled"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+       </UML:Classifier.feature>
+      </UML:Class>
+      <UML:Dependency visibility="public" isSpecification="false" namespace="Logical View" supplier="eG5igTILBlw3" xmi.id="JA0XYHWeTyEU" client="I8fVgmOCsE3C" name=""/>
+      <UML:Dependency visibility="public" isSpecification="false" namespace="Logical View" supplier="eG5igTILBlw3" xmi.id="DVPgRb809m3v" client="I8fVgmOCsE3C" name=""/>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="elLW3OWsHf2T" comment="@brief Manager for display groups. Add, remove, print and update all the displays at once.&#xa;&#xa;@version 0.90&#xa;&#xa;This class provides an easy way to manage many 7-segments display in an Arduino application.&#xa;Each display is connected to a shift register, which holds the data until the next shift is&#xa;carried out (see http://code.google.com/p/display-group/ for documentation).&#xa;This class holds an array of groups, which in turn is an array of display, and update the&#xa;whole array when requested. The update executes in reverse order, to account for the serial&#xa;hardware link between the shift registers.&#xa;&#xa;This class uses the STL library for Arduino, which can be found at&#xa;@htmlonly&#xa;&lt;a href=&quot;http://andybrown.me.uk/wk/2011/01/15/the-standard-template-library-stl-for-avr-with-c-streams/&quot;>&#xa;the-standard-template-library-stl-for-avr-with-c-streams &lt;/a>&#xa;@endhtmlonly&#xa;&#xa;@author Gionata Boccalini&#xa;@date   Jan 30, 2013" name="DisplayManager">
+       <UML:Classifier.feature>
+        <UML:Attribute visibility="public" isSpecification="false" ownerScope="classifier" xmi.id="fWKv9KMqDtAu" type="8uDkrfyVOJzR" comment="Default digits code for small common cathode 7-segments display" name="DEF_DIGITS"/>
+        <UML:Attribute visibility="public" isSpecification="false" ownerScope="classifier" xmi.id="tgtuSmibgvJV" type="8uDkrfyVOJzR" comment="Default bit order for the shift" name="DEF_ORDER"/>
+        <UML:Attribute visibility="public" isSpecification="false" ownerScope="classifier" xmi.id="aFyxWyMASg5b" type="htZKizVz1otq" comment="Default data output pin" name="dataPin"/>
+        <UML:Attribute visibility="public" isSpecification="false" ownerScope="classifier" xmi.id="zPRAJa4CEw4g" type="htZKizVz1otq" comment="Default clock output pin" name="clockPin"/>
+        <UML:Attribute visibility="public" isSpecification="false" ownerScope="classifier" xmi.id="imFNhXsGmpBJ" type="htZKizVz1otq" comment="Default &quot;output enable&quot; output pin" name="outputEnablePin"/>
+        <UML:Attribute visibility="private" isSpecification="false" xmi.id="sEsnd5yVxHuw" type="w0XfwY2MNzeJ" comment="Vector of display group" name="_groups"/>
+        <UML:Operation stereotype="constructor" visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="nXRFCWoBtDJC" comment="Constructor.&#xa;&#xa;@param[in] dataP&#x9;&#x9;&#x9;Arduino data pin for shift register&#xa;@param[in] clockP&#x9;&#x9;&#x9;Arduino clock pin for shift register&#xa;@param[in] outputEnableP  &#x9;Arduino output enable pin for shift register" name="DisplayManager">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="nOMzIQeyArLq" type="htZKizVz1otq" value="" name="dataP"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="OC4B1FSmmtzw" type="htZKizVz1otq" value="" name="clockP"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="Nn5G0PRmlnj3" type="htZKizVz1otq" value="" name="outputEnableP"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="EN1OFLEdVImU" comment="Default destructor." name="~ DisplayManager"/>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="VEEG5DCQyIfw" comment="Add a display group at the end of the data container. The variable pointed to&#xa;by value is used during the update of the display. Uses default digits code.&#xa;@param[in] name        Name of the display group&#xa;@param[in] id          Unique Id of the group&#xa;@param[in] nDisplay    Number of display contained in the group.&#xa;@param[in] value       Address of the variable to watch" name="addGroup">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="jegCvQeQdsgi" type="f6iQtSR5nQS2" value="" name="name"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="3r717mymseAj" type="htZKizVz1otq" value="" name="id"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="4ZpsxHshvWto" type="htZKizVz1otq" value="" name="nDisplay"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="lpveLmTIIgqf" type="9Pbz2jh6GWwE" value="" name="value"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="Z77ISY7ayhX0" comment="Add a display group at the end of the data container. The variable pointed to&#xa;by value is used during the update of the display.&#xa;@param[in] name        Name of the display group&#xa;@param[in] id          Unique Id of the group&#xa;@param[in] nDisplay    Number of display contained in the group.&#xa;@param[in] value       Address of the variable to watch&#xa;@param[in] digits[]    Array of segment code to initialize all the display in&#xa;                       the group.&#xa;@param[in] sizeOfDigits Size of the digits code display" name="addGroup">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="QE4hi1vToo69" type="f6iQtSR5nQS2" value="" name="name"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="YXQpDEUmJZ2m" type="htZKizVz1otq" value="" name="id"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="7AM5rr3H66wo" type="htZKizVz1otq" value="" name="nDisplay"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="5pGtbM08tOx6" type="9Pbz2jh6GWwE" value="" name="value"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="dPquytg5309s" type="8uDkrfyVOJzR" value="" name="digits[]"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="sC9wG4kLr0ET" type="htZKizVz1otq" value="" name="sizeOfDigits"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="MDbDZWHCv87r" comment="Add group to the DisplayManager. The group is inserted in the correct order,&#xa;given the index. The variable pointed to by value is used during the update&#xa;of the display. Uses default digits code.&#xa;@param[in] name        Name of the display group&#xa;@param[in] id          Unique Id of the group&#xa;@param[in] nDisplay    Number of display contained in the group&#xa;@param[in] index       Index for the group in the application&#xa;@param[in] value       Address of the variable to watch" name="insertGroup">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="zlw2k3uaG1WU" type="f6iQtSR5nQS2" value="" name="name"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="3GqvF2MZFxnn" type="htZKizVz1otq" value="" name="id"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="R4zKC4BBo5BY" type="htZKizVz1otq" value="" name="nDisplay"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="938N3er4shz7" type="htZKizVz1otq" value="" name="index"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="iJhvGUifWgzh" type="9Pbz2jh6GWwE" value="" name="value"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="kAqWG22P3Am4" comment="Add group to the DisplayManager. The group is inserted in the correct order,&#xa;given the index. The variable pointed to by value is used during the update&#xa;of the display.&#xa;@param[in] name        Name of the display group&#xa;@param[in] id          Unique Id of the group&#xa;@param[in] nDisplay    Number of display contained in the group&#xa;@param[in] index       Index for the group in the application&#xa;@param[in] value       Address of the variable to watch&#xa;@param[in] digits[]    Array of segment code to initialize all the display in&#xa;                       the group.&#xa;@param[in] sizeOfDigits Size of the digits code display" name="insertGroup">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="mb9dJ6kzQPue" type="f6iQtSR5nQS2" value="" name="name"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="rdKOJJ51StYi" type="htZKizVz1otq" value="" name="id"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="va5xjp1TQ86h" type="htZKizVz1otq" value="" name="nDisplay"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="FpgfEbH6EbSV" type="htZKizVz1otq" value="" name="index"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="vVWNO43If8FM" type="9Pbz2jh6GWwE" value="" name="value"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="vEpJNw1alfDx" type="8uDkrfyVOJzR" value="" name="digits[]"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="EU1Q6TvzwSKL" type="htZKizVz1otq" value="" name="sizeOfDigits"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="WNb9ToVM2JfN" comment="Replace a group with the one built from the given parameters. The group is&#xa;inserted in the correct order, given the index. The variable pointed to by&#xa;value is used during the update of the display.&#xa;@param[in] id          Unique Id of the group to be replaced&#xa;@param[in] name        Name of the display group&#xa;@param[in] nDisplay    Number of display contained in the group&#xa;@param[in] value       Address of the variable to watch" name="replaceGroup">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="DexyK8tYdvzh" type="htZKizVz1otq" value="" name="id"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="MugJM0crLDym" type="f6iQtSR5nQS2" value="" name="name"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="1U81llPyQKuk" type="htZKizVz1otq" value="" name="nDisplay"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="TnG4iDl56PMQ" type="9Pbz2jh6GWwE" value="" name="value"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="NyHg9GS8iY9T" comment="Replace a group with the one built from the given parameters. The group is&#xa;inserted in the correct order, given the index. The variable pointed to by&#xa;value is used during the update of the display.&#xa;@param[in] id          Unique Id of the group to be replaced&#xa;@param[in] name        Name of the display group&#xa;@param[in] nDisplay    Number of display contained in the group&#xa;@param[in] value       Address of the variable to watch&#xa;@param[in] digits      Array of segment code to initialize all the display in&#xa;                       the group.&#xa;@param[in] sizeOfDigits Size of the digits code display" name="replaceGroup">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="JWPjpJRG6gKn" type="htZKizVz1otq" value="" name="id"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="t3qzSCQn8fTF" type="f6iQtSR5nQS2" value="" name="name"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="ttNZRW2k1RSq" type="htZKizVz1otq" value="" name="nDisplay"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="it6pZQcRRSOr" type="9Pbz2jh6GWwE" value="" name="value"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="cmekS5zJyKtN" type="8uDkrfyVOJzR" value="" name="digits[]"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="qt5rJXf1Plqw" type="htZKizVz1otq" value="" name="sizeOfDigits"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="9QLaskPUW1Cw" comment="Remove a group from the manager&#xa;@param[in] id          Unique Id of the group" name="removeGroup">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="69G2T9PI2V7L" type="htZKizVz1otq" value="" name="id"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="0nNNWBKgcfES" comment="Clear all the groups from the manager" name="clearGroups"/>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="Nevud7qkF6mg" comment="Enable or disable a group, i.e. a binary zero will be transferred to the displays,&#xa;turning off all the segments. The displays, or the integrated logic could still be&#xa;on and powered.&#xa;@param[in] id          Unique Id of the group&#xa;@param[in] enable      True to enable the group or false to disable it. All the&#xa;                       segments will be off." name="enableGroup">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="DAyEd4ZbruzN" type="htZKizVz1otq" value="" name="id"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="90DO5y4I61Wj" type="6H1guE8Is3CV" value="" name="enable"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="54KwwHH2YHgT" comment="Update all the display group in the manager.&#xa;@return The index of the DisplayGroup with a failure in the update." name="updateAll">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter kind="return" xmi.id="VplNsvq1v2Ny" type="xYFaOtGSkNTp"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="0SH6RlnWn5Sk" comment="Sets the update byte order in the group given by index.&#xa;@param[in] id         Unique Id of the group&#xa;@param[in] order      Bit order: LSBFIRST or MSBFIRST." name="setBitOrder">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="NhktyRMTG5o6" type="htZKizVz1otq" value="" name="id"/>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="yd6ufTqdt7hK" type="htZKizVz1otq" value="" name="order"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="rSqeXGMsw7mu" comment="Prints the vector of groups in a string object.&#xa;@return The string representation of the vector of groups." name="printGroups">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter kind="return" xmi.id="Y6MmA8s8jy0M" type="f6iQtSR5nQS2"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+       </UML:Classifier.feature>
+      </UML:Class>
+      <UML:Class visibility="public" isSpecification="false" namespace="Logical View" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="cJzIeD6WSxH3" comment="@brief Single 7-segment display.&#xa;&#xa;This class holds the representation of any digits within the single&#xa;7-segment display. The class shifts out the data pin and manages&#xa;the clock pin to actually display the digits.&#xa;This class behave like an observer in the &quot;Observer&quot; GoF Design Pattern:&#xa;it observes the DisplayGroup to which belong and when its Display::update&#xa;method gets called the actual value to display is converted in binary form&#xa;and shifted out to the data output pin.&#xa;&#xa;The shifting pattern follows the requirements for 74HC595 and 74HC164&#xa;shift register, which can be found in the datasheet.&#xa;&#xa;@author Gionata Boccalini&#xa;@date   Jan 30, 2013" name="Display">
+       <UML:Classifier.feature>
+        <UML:Attribute visibility="private" isSpecification="false" xmi.id="AGe1SDtUlgkm" type="htZKizVz1otq" comment="arrary of digits codes" name="_digits"/>
+        <UML:Attribute visibility="private" isSpecification="false" xmi.id="JWBf3Qi3Szme" type="htZKizVz1otq" comment="byte order of visualization: MSBFIRST (most significant&#xa;bit first) or LSBFIRST (least significant bit first))" name="_bitOrder"/>
+        <UML:Operation stereotype="constructor" visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="2GYxVQtt5TEE" comment="Default Constructor" name="Display"/>
+        <UML:Operation stereotype="constructor" visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="lKI6cqsCArUm" comment="Constructor&#xa;&#xa;@param[in] digits      Array of digits code for every digits [0-9]" name="Display">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="2YGSTXVVl4QG" type="8uDkrfyVOJzR" value="" name="digits[]"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="SHAYiMmTh3aJ" comment="Default Destructor" name="~ Display"/>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="tQT1FxnHT1kx" comment="Shift out the binary value of update::digit using the standard&#xa;Arduino ShiftOut function&#xa;&#xa;@param[in] digit       The digits to be displayed" name="update">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="ZDQKHrZi6hGp" type="htZKizVz1otq" value="" name="digit"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="30Ii1qzvGSuV" comment="Shift out a binary zero (0) to turn off all the segments." name="turnOff"/>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="PglrhVoGiCZy" comment="@return the byte order of visualization: MSBFIRST or LSBFIRST" name="getBitOrder">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter kind="return" xmi.id="18g8puvssDbs" type="htZKizVz1otq"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+        <UML:Operation visibility="public" isSpecification="false" isQuery="false" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="2YnI1foOLXF3" comment="Sets the byte order of visualization: MSBFIRST or LSBFIRST&#xa;&#xa;@param[in] bitOrder    The byte order" name="setBitOrder">
+         <UML:BehavioralFeature.parameter>
+          <UML:Parameter visibility="private" isSpecification="false" xmi.id="21JiEseF0ILn" type="htZKizVz1otq" value="" name="bitOrder"/>
+         </UML:BehavioralFeature.parameter>
+        </UML:Operation>
+       </UML:Classifier.feature>
+      </UML:Class>
+      <UML:Association visibility="public" isSpecification="false" namespace="Logical View" xmi.id="6SRvaMcvoAe4" name="">
+       <UML:Association.connection>
+        <UML:AssociationEnd changeability="changeable" visibility="private" isNavigable="false" isSpecification="false" multiplicity="1..*" xmi.id="rkax6irvOLsS" type="I8fVgmOCsE3C" name="" aggregation="none"/>
+        <UML:AssociationEnd changeability="changeable" visibility="public" isNavigable="true" isSpecification="false" multiplicity="1" xmi.id="KSJ1ZXYexzXX" type="elLW3OWsHf2T" name="" aggregation="none"/>
+       </UML:Association.connection>
+      </UML:Association>
+      <UML:Association visibility="public" isSpecification="false" namespace="Logical View" xmi.id="nz7JWiLbyJgi" name="">
+       <UML:Association.connection>
+        <UML:AssociationEnd changeability="changeable" visibility="private" isNavigable="false" isSpecification="false" multiplicity="1..*" xmi.id="n2cfXmdB5OaP" type="cJzIeD6WSxH3" name="" aggregation="none"/>
+        <UML:AssociationEnd changeability="changeable" visibility="public" isNavigable="true" isSpecification="false" multiplicity="1" xmi.id="2MdRu5Sh3ZyZ" type="I8fVgmOCsE3C" name="" aggregation="none"/>
+       </UML:Association.connection>
+      </UML:Association>
+     </UML:Namespace.ownedElement>
+     <XMI.extension xmi.extender="umbrello">
+      <diagrams>
+       <diagram showopsig="1" linecolor="#ff0000" snapx="10" showattribassocs="1" snapy="10" linewidth="0" showattsig="1" textcolor="#000000" isopen="1" showpackage="1" showpubliconly="0" showstereotype="1" name="diagramma delle classi" font="KacstTitleL,8,-1,5,50,0,0,0,0,0" canvasheight="876" canvaswidth="1524" localid="-1" snapcsgrid="0" showgrid="0" showops="1" griddotcolor="#808080" backgroundcolor="#ffffff" usefillcolor="1" fillcolor="#ffff51" zoom="100" xmi.id="FWxtGNAGXQT8" documentation="" showscope="1" snapgrid="0" showatts="1" type="1">
+        <widgets>
+         <classwidget linecolor="none" usesdiagramfillcolor="1" linewidth="none" showoperations="1" textcolor="#000000" usesdiagramusefillcolor="1" showpubliconly="0" showpackage="1" x="299" showattsigs="601" showstereotype="1" y="505" showattributes="1" font="KacstTitleL,8,-1,5,75,0,0,0,0,0" width="534" isinstance="0" usefillcolor="1" fillcolor="none" xmi.id="I8fVgmOCsE3C" showscope="1" height="272" showopsigs="601"/>
+         <classwidget linecolor="none" usesdiagramfillcolor="1" linewidth="none" showoperations="1" textcolor="#000000" usesdiagramusefillcolor="1" showpubliconly="0" showpackage="1" x="921" showattsigs="601" showstereotype="1" y="505" showattributes="1" font="KacstTitleL,8,-1,5,75,0,0,0,0,0" width="178" isinstance="0" usefillcolor="1" fillcolor="none" xmi.id="cJzIeD6WSxH3" showscope="1" height="160" showopsigs="601"/>
+         <classwidget linecolor="none" usesdiagramfillcolor="1" linewidth="none" showoperations="1" textcolor="#000000" usesdiagramusefillcolor="1" showpubliconly="0" showpackage="1" x="290" showattsigs="601" showstereotype="1" y="67" showattributes="1" font="KacstTitleL,8,-1,5,75,0,0,0,0,0" width="705" isinstance="0" usefillcolor="1" fillcolor="none" xmi.id="elLW3OWsHf2T" showscope="1" height="336" showopsigs="601"/>
+         <datatypewidget width="149" showstereotype="1" x="933" usesdiagramusefillcolor="1" y="745" usesdiagramfillcolor="1" isinstance="0" fillcolor="none" height="32" linecolor="none" xmi.id="2k6adStHUAIM" textcolor="#000000" usefillcolor="1" linewidth="none" font="KacstTitleL,8,-1,5,75,1,0,0,0,0"/>
+         <datatypewidget width="187" showstereotype="1" x="743" usesdiagramusefillcolor="0" y="429" usesdiagramfillcolor="0" isinstance="0" fillcolor="#ffff51" height="32" linecolor="#ff0000" xmi.id="w0XfwY2MNzeJ" textcolor="#000000" usefillcolor="1" linewidth="0" font="KacstTitleL,8,-1,5,75,1,0,0,0,0"/>
+         <notewidget width="93" showstereotype="1" x="240" noteType="0" usesdiagramusefillcolor="1" y="38" usesdiagramfillcolor="0" isinstance="0" fillcolor="#5dff00" height="43" linecolor="#000000" xmi.id="csLwIfMAhmZh" textcolor="#000000" usefillcolor="1" linewidth="none" font="KacstTitleL,8,-1,5,50,0,0,0,0,0" text="Subject"/>
+         <notewidget width="93" showstereotype="1" x="247" noteType="0" usesdiagramusefillcolor="1" y="475" usesdiagramfillcolor="0" isinstance="0" fillcolor="#5dff00" height="43" linecolor="#000000" xmi.id="csLwIfMAhmZh" textcolor="#000000" usefillcolor="1" linewidth="none" font="KacstTitleL,8,-1,5,50,0,0,0,0,0" text="Observer"/>
+         <notewidget width="93" showstereotype="1" x="871" noteType="0" usesdiagramusefillcolor="1" y="475" usesdiagramfillcolor="0" isinstance="0" fillcolor="#5dff00" height="43" linecolor="#000000" xmi.id="csLwIfMAhmZh" textcolor="#000000" usefillcolor="1" linewidth="none" font="KacstTitleL,8,-1,5,50,0,0,0,0,0" text="Observer"/>
+        </widgets>
+        <messages/>
+        <associations>
+         <assocwidget indexa="2" linecolor="none" indexb="1" usesdiagramfillcolor="0" widgetbid="2k6adStHUAIM" linewidth="none" textcolor="none" usesdiagramusefillcolor="1" totalcounta="3" totalcountb="2" widgetaid="I8fVgmOCsE3C" visibilityA="1" visibilityB="1" usefillcolor="1" fillcolor="#000000" changeabilityA="900" xmi.id="EoTLaWG1u8e0" changeabilityB="900" type="510">
+          <linepath>
+           <startpoint startx="833" starty="771"/>
+           <endpoint endx="933" endy="771"/>
+          </linepath>
+          <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" textcolor="none" usesdiagramusefillcolor="1" x="858" showstereotype="1" y="748" text="_displays" font="KacstTitleL,8,-1,5,50,0,0,0,0,0" pretext="-" role="710" width="65" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="aSajJRu6bxFk" height="20"/>
+         </assocwidget>
+         <assocwidget indexa="2" linecolor="none" indexb="1" usesdiagramfillcolor="0" widgetbid="w0XfwY2MNzeJ" linewidth="none" textcolor="none" usesdiagramusefillcolor="1" totalcounta="3" totalcountb="2" widgetaid="elLW3OWsHf2T" visibilityA="1" visibilityB="1" usefillcolor="1" fillcolor="#000000" changeabilityA="900" xmi.id="sEsnd5yVxHuw" changeabilityB="900" type="510">
+          <linepath>
+           <startpoint startx="995" starty="403"/>
+           <endpoint endx="930" endy="430"/>
+           <point x="995" y="430"/>
+          </linepath>
+          <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" textcolor="none" usesdiagramusefillcolor="1" x="927" showstereotype="1" y="407" text="_groups" font="KacstTitleL,8,-1,5,50,0,0,0,0,0" pretext="-" role="710" width="58" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="TKe1yPOvwBme" height="20"/>
+         </assocwidget>
+         <assocwidget indexa="1" indexb="1" usesdiagramusefillcolor="0" widgetaid="I8fVgmOCsE3C" usesdiagramfillcolor="0" fillcolor="#000000" linecolor="#000000" totalcounta="2" xmi.id="6SRvaMcvoAe4" widgetbid="elLW3OWsHf2T" totalcountb="3" type="512" textcolor="#000000" usefillcolor="0" linewidth="0">
+          <linepath>
+           <startpoint startx="566" starty="505"/>
+           <endpoint endx="566" endy="403"/>
+          </linepath>
+          <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" textcolor="#000000" usesdiagramusefillcolor="1" x="568" showstereotype="1" y="471" text="1..*" font="KacstTitleL,8,-1,5,50,0,0,0,0,0" pretext="" role="701" width="29" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="gBrz40ecRCLk" height="20"/>
+          <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" textcolor="#000000" usesdiagramusefillcolor="1" x="570" showstereotype="1" y="416" text="1" font="KacstTitleL,8,-1,5,50,0,0,0,0,0" pretext="" role="702" width="15" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="dDoCA3xdMZcI" height="20"/>
+         </assocwidget>
+         <assocwidget indexa="1" indexb="1" usesdiagramusefillcolor="0" widgetaid="cJzIeD6WSxH3" usesdiagramfillcolor="0" fillcolor="#000000" linecolor="#000000" totalcounta="2" xmi.id="nz7JWiLbyJgi" widgetbid="I8fVgmOCsE3C" totalcountb="3" type="512" textcolor="#000000" usefillcolor="0" linewidth="0">
+          <linepath>
+           <startpoint startx="921" starty="593"/>
+           <endpoint endx="833" endy="593"/>
+          </linepath>
+          <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" textcolor="#000000" usesdiagramusefillcolor="1" x="887" showstereotype="1" y="559" text="1..*" font="KacstTitleL,8,-1,5,50,0,0,0,0,0" pretext="" role="701" width="29" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="w1EtAyVpAMoE" height="20"/>
+          <floatingtext linecolor="none" usesdiagramfillcolor="1" linewidth="none" textcolor="#000000" usesdiagramusefillcolor="1" x="835" showstereotype="1" y="559" text="1" font="KacstTitleL,8,-1,5,50,0,0,0,0,0" pretext="" role="702" width="15" isinstance="0" posttext="" usefillcolor="1" fillcolor="none" xmi.id="KQplcAWGMISU" height="20"/>
+         </assocwidget>
+        </associations>
+       </diagram>
+      </diagrams>
+     </XMI.extension>
+    </UML:Model>
+    <UML:Model stereotype="folder" visibility="public" isSpecification="false" namespace="m1" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="Use Case View" name="Use Case View">
+     <UML:Namespace.ownedElement/>
+    </UML:Model>
+    <UML:Model stereotype="folder" visibility="public" isSpecification="false" namespace="m1" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="Component View" name="Component View">
+     <UML:Namespace.ownedElement>
+      <UML:Artifact visibility="public" isSpecification="false" namespace="Component View" drawas="1" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="rv8AE4s5cpSD" comment="/*&#xa; *  This file is part of DisplayGroup Library.&#xa; * &#xa; * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);&#xa; * you may not use this file except in compliance with the License.&#xa; * You may obtain a copy of the License at&#xa; * &#xa; *    http://www.apache.org/licenses/LICENSE-2.0&#xa; * &#xa; * Unless required by applicable law or agreed to in writing, software&#xa; * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,&#xa; * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.&#xa; * See the License for the specific language governing permissions and&#xa; * limitations under the License.&#xa; * &#xa; */" name="DisplayManager.h"/>
+      <UML:Artifact visibility="public" isSpecification="false" namespace="Component View" drawas="1" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="OfcNBK84LJYl" comment="/*&#xa; *  This file is part of DisplayGroup Library.&#xa; * &#xa; * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);&#xa; * you may not use this file except in compliance with the License.&#xa; * You may obtain a copy of the License at&#xa; * &#xa; *    http://www.apache.org/licenses/LICENSE-2.0&#xa; * &#xa; * Unless required by applicable law or agreed to in writing, software&#xa; * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,&#xa; * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.&#xa; * See the License for the specific language governing permissions and&#xa; * limitations under the License.&#xa; * &#xa; */" name="Display.h"/>
+      <UML:Artifact visibility="public" isSpecification="false" namespace="Component View" drawas="1" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="sOrqhDcpRGqr" comment="/*&#xa; *  This file is part of DisplayGroup Library.&#xa; * &#xa; * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);&#xa; * you may not use this file except in compliance with the License.&#xa; * You may obtain a copy of the License at&#xa; * &#xa; *    http://www.apache.org/licenses/LICENSE-2.0&#xa; * &#xa; * Unless required by applicable law or agreed to in writing, software&#xa; * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,&#xa; * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.&#xa; * See the License for the specific language governing permissions and&#xa; * limitations under the License.&#xa; * &#xa; */" name="DisplayGroup.h"/>
+     </UML:Namespace.ownedElement>
+    </UML:Model>
+    <UML:Model stereotype="folder" visibility="public" isSpecification="false" namespace="m1" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="Deployment View" name="Deployment View">
+     <UML:Namespace.ownedElement/>
+    </UML:Model>
+    <UML:Model stereotype="folder" visibility="public" isSpecification="false" namespace="m1" isAbstract="false" isLeaf="false" isRoot="false" xmi.id="Entity Relationship Model" name="Entity Relationship Model">
+     <UML:Namespace.ownedElement/>
+    </UML:Model>
+   </UML:Namespace.ownedElement>
+  </UML:Model>
+ </XMI.content>
+ <XMI.extensions xmi.extender="umbrello">
+  <docsettings viewid="FWxtGNAGXQT8" uniqueid="Nlb7bkNI1ykU" documentation=""/>
+  <listview>
+   <listitem open="1" type="800" id="Views">
+    <listitem open="1" type="836" id="Entity Relationship Model"/>
+    <listitem open="1" type="802" id="Use Case View"/>
+    <listitem open="1" type="821" id="Component View">
+     <listitem open="0" type="824" id="OfcNBK84LJYl"/>
+     <listitem open="0" type="824" id="sOrqhDcpRGqr"/>
+     <listitem open="0" type="824" id="rv8AE4s5cpSD"/>
+    </listitem>
+    <listitem open="1" type="827" id="Deployment View"/>
+    <listitem open="1" type="801" id="Logical View">
+     <listitem open="0" type="813" id="6H1guE8Is3CV"/>
+     <listitem open="0" type="813" id="htZKizVz1otq"/>
+     <listitem open="0" type="807" id="FWxtGNAGXQT8" label="diagramma delle classi"/>
+     <listitem open="0" type="813" id="cJzIeD6WSxH3">
+      <listitem open="0" type="814" id="JWBf3Qi3Szme"/>
+      <listitem open="0" type="814" id="AGe1SDtUlgkm"/>
+      <listitem open="0" type="815" id="SHAYiMmTh3aJ"/>
+      <listitem open="0" type="815" id="2GYxVQtt5TEE"/>
+      <listitem open="0" type="815" id="lKI6cqsCArUm"/>
+      <listitem open="0" type="815" id="PglrhVoGiCZy"/>
+      <listitem open="0" type="815" id="2YnI1foOLXF3"/>
+      <listitem open="0" type="815" id="30Ii1qzvGSuV"/>
+      <listitem open="0" type="815" id="tQT1FxnHT1kx"/>
+     </listitem>
+     <listitem open="0" type="813" id="I8fVgmOCsE3C">
+      <listitem open="0" type="814" id="LSLpFQtUjxe8"/>
+      <listitem open="0" type="814" id="EoTLaWG1u8e0"/>
+      <listitem open="0" type="814" id="eoD2DrJn8mWe"/>
+      <listitem open="0" type="814" id="ovzrYhKkWn54"/>
+      <listitem open="0" type="814" id="fiHZwDfD8Fhx"/>
+      <listitem open="0" type="814" id="cJViYAgK5fAd"/>
+      <listitem open="0" type="814" id="HL5CRhA4NPeJ"/>
+      <listitem open="0" type="815" id="fdR2brZJOYog"/>
+      <listitem open="0" type="815" id="JND4ISQ1XwCV"/>
+      <listitem open="0" type="815" id="8Z3FU0q5WhRC"/>
+      <listitem open="0" type="815" id="bYrMgJJsd4hG"/>
+      <listitem open="0" type="815" id="9RXVxJBK7dra"/>
+      <listitem open="0" type="815" id="CKnqed4m2ZH0"/>
+      <listitem open="0" type="815" id="9tuqrxbzXcD1"/>
+      <listitem open="0" type="815" id="8BSb3dMBWE1L"/>
+      <listitem open="0" type="815" id="PoUWUe9rQXJv"/>
+     </listitem>
+     <listitem open="0" type="813" id="elLW3OWsHf2T">
+      <listitem open="0" type="814" id="sEsnd5yVxHuw"/>
+      <listitem open="0" type="815" id="EN1OFLEdVImU"/>
+      <listitem open="0" type="815" id="Z77ISY7ayhX0"/>
+      <listitem open="0" type="815" id="VEEG5DCQyIfw"/>
+      <listitem open="0" type="815" id="0nNNWBKgcfES"/>
+      <listitem open="0" type="814" id="zPRAJa4CEw4g"/>
+      <listitem open="0" type="814" id="aFyxWyMASg5b"/>
+      <listitem open="0" type="814" id="fWKv9KMqDtAu"/>
+      <listitem open="0" type="814" id="tgtuSmibgvJV"/>
+      <listitem open="0" type="815" id="nXRFCWoBtDJC"/>
+      <listitem open="0" type="815" id="Nevud7qkF6mg"/>
+      <listitem open="0" type="815" id="kAqWG22P3Am4"/>
+      <listitem open="0" type="815" id="MDbDZWHCv87r"/>
+      <listitem open="0" type="814" id="imFNhXsGmpBJ"/>
+      <listitem open="0" type="815" id="rSqeXGMsw7mu"/>
+      <listitem open="0" type="815" id="9QLaskPUW1Cw"/>
+      <listitem open="0" type="815" id="NyHg9GS8iY9T"/>
+      <listitem open="0" type="815" id="WNb9ToVM2JfN"/>
+      <listitem open="0" type="815" id="0SH6RlnWn5Sk"/>
+      <listitem open="0" type="815" id="54KwwHH2YHgT"/>
+     </listitem>
+     <listitem open="1" type="818" id="QrzJwecl6SQc">
+      <listitem open="0" type="813" id="hkSdrCVNHp9R"/>
+     </listitem>
+     <listitem open="0" type="813" id="f6iQtSR5nQS2"/>
+     <listitem open="0" type="830" id="Datatypes">
+      <listitem open="1" type="829" id="ZDS4btCg5auX"/>
+      <listitem open="1" type="829" id="4HmByRHCxC5C"/>
+      <listitem open="0" type="829" id="8uDkrfyVOJzR"/>
+      <listitem open="1" type="829" id="QrHO3KYcXyh9"/>
+      <listitem open="1" type="829" id="W4ygOrFQ81c5"/>
+      <listitem open="1" type="829" id="5COFUwATAMva"/>
+      <listitem open="1" type="829" id="HqWNp6SGxhc0"/>
+      <listitem open="1" type="829" id="rtnuShRwjPb6"/>
+      <listitem open="0" type="829" id="w0XfwY2MNzeJ"/>
+      <listitem open="0" type="829" id="2k6adStHUAIM"/>
+      <listitem open="1" type="829" id="GWjOwYx1mTnQ"/>
+      <listitem open="0" type="829" id="9Pbz2jh6GWwE"/>
+      <listitem open="0" type="829" id="Nlb7bkNI1ykU"/>
+      <listitem open="1" type="829" id="18bX6Iex9PpZ"/>
+      <listitem open="1" type="829" id="Tg0RMaPNi0so"/>
+      <listitem open="1" type="829" id="7GWod7ssxPGk"/>
+     </listitem>
+     <listitem open="0" type="813" id="xYFaOtGSkNTp"/>
+    </listitem>
+   </listitem>
+  </listview>
+  <codegeneration>
+   <codegenerator language="C++">
+    <classifiercodedocument package="Logical View" fileExt=".cpp" parent_class="htZKizVz1otq" id="htZKizVz1otq" fileName="byte" writeOutCode="true">
+     <textblocks/>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields/>
+    </classifiercodedocument>
+    <classifiercodedocument package="Logical View" fileExt=".cpp" parent_class="f6iQtSR5nQS2" id="f6iQtSR5nQS2" fileName="String" writeOutCode="true">
+     <textblocks/>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields/>
+    </classifiercodedocument>
+    <classifiercodedocument package="Logical View" fileExt=".cpp" parent_class="xYFaOtGSkNTp" id="xYFaOtGSkNTp" fileName="uint16_t" writeOutCode="true">
+     <textblocks>
+      <codeblockwithcomments tag="includes" text="#include &quot;uint16_t.h&quot;&amp;#010;">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <hierarchicalcodeblock tag="constructionMethodsBlock" canDelete="false">
+       <header>
+        <cppcodedocumentation tag="" text="Constructors/Destructors"/>
+       </header>
+       <textblocks/>
+      </hierarchicalcodeblock>
+      <hierarchicalcodeblock tag="otherMethodsBlock" canDelete="false">
+       <header>
+        <cppcodedocumentation tag="" text="Methods"/>
+       </header>
+       <textblocks/>
+      </hierarchicalcodeblock>
+     </textblocks>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields/>
+    </classifiercodedocument>
+    <classifiercodedocument package="Logical View" fileExt=".cpp" parent_class="6H1guE8Is3CV" id="6H1guE8Is3CV" fileName="boolean" writeOutCode="true">
+     <textblocks/>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields/>
+    </classifiercodedocument>
+    <classifiercodedocument package="QrzJwecl6SQc" fileExt=".cpp" parent_class="hkSdrCVNHp9R" id="hkSdrCVNHp9R" fileName="vector" writeOutCode="true">
+     <textblocks/>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields/>
+    </classifiercodedocument>
+    <classifiercodedocument package="Logical View" fileExt=".cpp" parent_class="I8fVgmOCsE3C" id="I8fVgmOCsE3C" fileName="DisplayGroup" writeOutCode="true">
+     <textblocks>
+      <codeblockwithcomments tag="includes" text="#include &quot;displaygroup.h&quot;&amp;#010;">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <hierarchicalcodeblock tag="constructionMethodsBlock" canDelete="false">
+       <header>
+        <cppcodedocumentation tag="" text="Constructors/Destructors"/>
+       </header>
+       <textblocks>
+        <codeoperation tag="operation_JND4ISQ1XwCV" parent_id="JND4ISQ1XwCV" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Constructor.&amp;#010;&amp;#010;@param[in] name        Name of the DisplayGroup&amp;#010;@param[in] nDisplay    Number of display in the group&amp;#010;@param[in] id          Id of the DisplayGroup in the manager&amp;#010;@param[in] *value      Address of the value to be monitored&amp;#010;@param[in] digits[]    Array of 7-segments code for each digits [0-9]"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_fdR2brZJOYog" parent_id="fdR2brZJOYog" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Default destructor."/>
+         </header>
+        </codeoperation>
+       </textblocks>
+      </hierarchicalcodeblock>
+      <hierarchicalcodeblock tag="otherMethodsBlock" canDelete="false">
+       <header>
+        <cppcodedocumentation tag="" text="Methods"/>
+       </header>
+       <textblocks>
+        <codeoperation tag="operation_PoUWUe9rQXJv" parent_id="PoUWUe9rQXJv" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Scans the value to be showed and count how many digits must be sent to the displays.&amp;#010;The count is made by dividing and considering the remainder of divisions by 10, until&amp;#010;the quotient is zero or there are no display available in the group any more.&amp;#010;The method does automatic padding (filling) with zeros when needed in the heading and&amp;#010;trailing of the displays vector.&amp;#010;&amp;#010;@return -1     If _nDisplay is equal to zero&amp;#010;@return -2     If _value is NULL&amp;#010;@return -3     If the whole value cannot be displayed with the number of displays in&amp;#010;               the group&amp;#010;@return  0     On success"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_9RXVxJBK7dra" parent_id="9RXVxJBK7dra" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="&amp;#010;@return The unique id of the DisplayGroup in the manager"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_CKnqed4m2ZH0" parent_id="CKnqed4m2ZH0" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="&amp;#010;@return The name of the DisplayGroup"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_bYrMgJJsd4hG" parent_id="bYrMgJJsd4hG" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="&amp;#010;@return The number of display in the group"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_8Z3FU0q5WhRC" parent_id="8Z3FU0q5WhRC" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="&amp;#010;@return The bit order in every display"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_9tuqrxbzXcD1" parent_id="9tuqrxbzXcD1" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="&amp;#010;@param[in] bitOrder    The bit order in every display. Can LSBFIRST or MSBFIRST,&amp;#010;                       as in Arduino specification"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_8BSb3dMBWE1L" parent_id="8BSb3dMBWE1L" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Set the enable flag&amp;#010;@param enabled         True to enable the group or false to disable it. All the&amp;#010;                       segments will be off."/>
+         </header>
+        </codeoperation>
+        <codeaccessormethod tag="hblock_tag_10" accessType="0" parent_id="EoTLaWG1u8e0" writeOutText="false" classfield_id="EoTLaWG1u8e0" text="return _displays;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Get the value of _displays&amp;#010;Vector of 7-segments displays&amp;#010;@return the value of _displays"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_11" accessType="1" parent_id="EoTLaWG1u8e0" writeOutText="false" classfield_id="EoTLaWG1u8e0" text="_displays = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Set the value of _displays&amp;#010;Vector of 7-segments displays&amp;#010;@param value the value of _displays"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_12" accessType="0" parent_id="fiHZwDfD8Fhx" writeOutText="false" classfield_id="fiHZwDfD8Fhx" text="return _name;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Get the value of _name&amp;#010;Name of the group&amp;#010;@return the value of _name"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_13" accessType="1" parent_id="fiHZwDfD8Fhx" writeOutText="false" classfield_id="fiHZwDfD8Fhx" text="_name = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Set the value of _name&amp;#010;Name of the group&amp;#010;@param value the value of _name"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_14" accessType="0" parent_id="ovzrYhKkWn54" writeOutText="false" classfield_id="ovzrYhKkWn54" text="return _id;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Get the value of _id&amp;#010;Id of the DisplayGroup&amp;#010;@return the value of _id"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_15" accessType="1" parent_id="ovzrYhKkWn54" writeOutText="false" classfield_id="ovzrYhKkWn54" text="_id = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Set the value of _id&amp;#010;Id of the DisplayGroup&amp;#010;@param value the value of _id"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_16" accessType="0" parent_id="HL5CRhA4NPeJ" writeOutText="false" classfield_id="HL5CRhA4NPeJ" text="return _value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Get the value of _value&amp;#010;Address of the value to be monitored&amp;#010;@return the value of _value"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_17" accessType="1" parent_id="HL5CRhA4NPeJ" writeOutText="false" classfield_id="HL5CRhA4NPeJ" text="_value = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Set the value of _value&amp;#010;Address of the value to be monitored&amp;#010;@param value the value of _value"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_18" accessType="0" parent_id="cJViYAgK5fAd" writeOutText="false" classfield_id="cJViYAgK5fAd" text="return _nDisplay;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Get the value of _nDisplay&amp;#010;Number of display in the group&amp;#010;@return the value of _nDisplay"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_19" accessType="1" parent_id="cJViYAgK5fAd" writeOutText="false" classfield_id="cJViYAgK5fAd" text="_nDisplay = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Set the value of _nDisplay&amp;#010;Number of display in the group&amp;#010;@param value the value of _nDisplay"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_20" accessType="0" parent_id="LSLpFQtUjxe8" writeOutText="false" classfield_id="LSLpFQtUjxe8" text="return _bitOrder;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Get the value of _bitOrder&amp;#010;Bit order in every display&amp;#010;@return the value of _bitOrder"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_21" accessType="1" parent_id="LSLpFQtUjxe8" writeOutText="false" classfield_id="LSLpFQtUjxe8" text="_bitOrder = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Set the value of _bitOrder&amp;#010;Bit order in every display&amp;#010;@param value the value of _bitOrder"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_22" accessType="0" parent_id="eoD2DrJn8mWe" writeOutText="false" classfield_id="eoD2DrJn8mWe" text="return _enabled;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Get the value of _enabled&amp;#010;Enable flag&amp;#010;@return the value of _enabled"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_23" accessType="1" parent_id="eoD2DrJn8mWe" writeOutText="false" classfield_id="eoD2DrJn8mWe" text="_enabled = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Set the value of _enabled&amp;#010;Enable flag&amp;#010;@param value the value of _enabled"/>
+         </header>
+        </codeaccessormethod>
+       </textblocks>
+      </hierarchicalcodeblock>
+     </textblocks>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="EoTLaWG1u8e0" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="EoTLaWG1u8e0" indentLevel="1" text="private std::vector&lt; Display > _displays;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Vector of 7-segments displays"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_10" accessType="0" parent_id="EoTLaWG1u8e0" writeOutText="false" classfield_id="EoTLaWG1u8e0" text="return _displays;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Get the value of _displays&amp;#010;Vector of 7-segments displays&amp;#010;@return the value of _displays"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_11" accessType="1" parent_id="EoTLaWG1u8e0" writeOutText="false" classfield_id="EoTLaWG1u8e0" text="_displays = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Set the value of _displays&amp;#010;Vector of 7-segments displays&amp;#010;@param value the value of _displays"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="fiHZwDfD8Fhx" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="fiHZwDfD8Fhx" indentLevel="1" text="private String _name;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Name of the group"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_12" accessType="0" parent_id="fiHZwDfD8Fhx" writeOutText="false" classfield_id="fiHZwDfD8Fhx" text="return _name;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Get the value of _name&amp;#010;Name of the group&amp;#010;@return the value of _name"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_13" accessType="1" parent_id="fiHZwDfD8Fhx" writeOutText="false" classfield_id="fiHZwDfD8Fhx" text="_name = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Set the value of _name&amp;#010;Name of the group&amp;#010;@param value the value of _name"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="ovzrYhKkWn54" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="ovzrYhKkWn54" indentLevel="1" text="private byte _id;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Id of the DisplayGroup"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_14" accessType="0" parent_id="ovzrYhKkWn54" writeOutText="false" classfield_id="ovzrYhKkWn54" text="return _id;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Get the value of _id&amp;#010;Id of the DisplayGroup&amp;#010;@return the value of _id"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_15" accessType="1" parent_id="ovzrYhKkWn54" writeOutText="false" classfield_id="ovzrYhKkWn54" text="_id = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Set the value of _id&amp;#010;Id of the DisplayGroup&amp;#010;@param value the value of _id"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="HL5CRhA4NPeJ" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="HL5CRhA4NPeJ" indentLevel="1" text="private uint16_t* _value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Address of the value to be monitored"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_16" accessType="0" parent_id="HL5CRhA4NPeJ" writeOutText="false" classfield_id="HL5CRhA4NPeJ" text="return _value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Get the value of _value&amp;#010;Address of the value to be monitored&amp;#010;@return the value of _value"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_17" accessType="1" parent_id="HL5CRhA4NPeJ" writeOutText="false" classfield_id="HL5CRhA4NPeJ" text="_value = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Set the value of _value&amp;#010;Address of the value to be monitored&amp;#010;@param value the value of _value"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="cJViYAgK5fAd" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="cJViYAgK5fAd" indentLevel="1" text="private byte _nDisplay;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Number of display in the group"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_18" accessType="0" parent_id="cJViYAgK5fAd" writeOutText="false" classfield_id="cJViYAgK5fAd" text="return _nDisplay;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Get the value of _nDisplay&amp;#010;Number of display in the group&amp;#010;@return the value of _nDisplay"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_19" accessType="1" parent_id="cJViYAgK5fAd" writeOutText="false" classfield_id="cJViYAgK5fAd" text="_nDisplay = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Set the value of _nDisplay&amp;#010;Number of display in the group&amp;#010;@param value the value of _nDisplay"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="LSLpFQtUjxe8" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="LSLpFQtUjxe8" indentLevel="1" text="private byte _bitOrder;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Bit order in every display"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_20" accessType="0" parent_id="LSLpFQtUjxe8" writeOutText="false" classfield_id="LSLpFQtUjxe8" text="return _bitOrder;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Get the value of _bitOrder&amp;#010;Bit order in every display&amp;#010;@return the value of _bitOrder"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_21" accessType="1" parent_id="LSLpFQtUjxe8" writeOutText="false" classfield_id="LSLpFQtUjxe8" text="_bitOrder = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Set the value of _bitOrder&amp;#010;Bit order in every display&amp;#010;@param value the value of _bitOrder"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="eoD2DrJn8mWe" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="eoD2DrJn8mWe" indentLevel="1" text="private boolean _enabled;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Enable flag"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_22" accessType="0" parent_id="eoD2DrJn8mWe" writeOutText="false" classfield_id="eoD2DrJn8mWe" text="return _enabled;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Get the value of _enabled&amp;#010;Enable flag&amp;#010;@return the value of _enabled"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_23" accessType="1" parent_id="eoD2DrJn8mWe" writeOutText="false" classfield_id="eoD2DrJn8mWe" text="_enabled = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Set the value of _enabled&amp;#010;Enable flag&amp;#010;@param value the value of _enabled"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+     </classfields>
+    </classifiercodedocument>
+    <classifiercodedocument package="-1" fileExt=".cpp" parent_class="elLW3OWsHf2T" id="elLW3OWsHf2T" fileName="DisplayManager" writeOutCode="true">
+     <textblocks>
+      <codeblockwithcomments tag="includes" text="#include &quot;displaymanager.h&quot;&amp;#010;">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <hierarchicalcodeblock tag="constructionMethodsBlock" canDelete="false">
+       <header>
+        <cppcodedocumentation tag="" text="Constructors/Destructors"/>
+       </header>
+       <textblocks>
+        <codeoperation tag="operation_nXRFCWoBtDJC" parent_id="nXRFCWoBtDJC" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Constructor.&amp;#010;&amp;#010;@param[in] dataP&#x9;&#x9;&#x9;Arduino data pin for shift register&amp;#010;@param[in] clockP&#x9;&#x9;&#x9;Arduino clock pin for shift register&amp;#010;@param[in] outputEnableP  &#x9;Arduino output enable pin for shift register"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_EN1OFLEdVImU" parent_id="EN1OFLEdVImU" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Default destructor."/>
+         </header>
+        </codeoperation>
+       </textblocks>
+      </hierarchicalcodeblock>
+      <hierarchicalcodeblock tag="otherMethodsBlock" canDelete="false">
+       <header>
+        <cppcodedocumentation tag="" text="Methods"/>
+       </header>
+       <textblocks>
+        <codeaccessormethod tag="hblock_tag_0" accessType="0" parent_id="fWKv9KMqDtAu" classfield_id="fWKv9KMqDtAu" text="return DEF_DIGITS;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Get the value of DEF_DIGITS&amp;#010;Default digits code for small common cathode 7-segments display&amp;#010;@return the value of DEF_DIGITS"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_1" accessType="1" parent_id="fWKv9KMqDtAu" classfield_id="fWKv9KMqDtAu" text="DEF_DIGITS = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Set the value of DEF_DIGITS&amp;#010;Default digits code for small common cathode 7-segments display&amp;#010;@param value the value of DEF_DIGITS"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_2" accessType="0" parent_id="tgtuSmibgvJV" classfield_id="tgtuSmibgvJV" text="return DEF_ORDER;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Get the value of DEF_ORDER&amp;#010;Default bit order for the shift&amp;#010;@return the value of DEF_ORDER"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_3" accessType="1" parent_id="tgtuSmibgvJV" classfield_id="tgtuSmibgvJV" text="DEF_ORDER = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Set the value of DEF_ORDER&amp;#010;Default bit order for the shift&amp;#010;@param value the value of DEF_ORDER"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_4" accessType="0" parent_id="aFyxWyMASg5b" classfield_id="aFyxWyMASg5b" text="return dataPin;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Get the value of dataPin&amp;#010;Default data output pin&amp;#010;@return the value of dataPin"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_5" accessType="1" parent_id="aFyxWyMASg5b" classfield_id="aFyxWyMASg5b" text="dataPin = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Set the value of dataPin&amp;#010;Default data output pin&amp;#010;@param value the value of dataPin"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_6" accessType="0" parent_id="zPRAJa4CEw4g" classfield_id="zPRAJa4CEw4g" text="return clockPin;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Get the value of clockPin&amp;#010;Default clock output pin&amp;#010;@return the value of clockPin"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_7" accessType="1" parent_id="zPRAJa4CEw4g" classfield_id="zPRAJa4CEw4g" text="clockPin = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Set the value of clockPin&amp;#010;Default clock output pin&amp;#010;@param value the value of clockPin"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_8" accessType="0" parent_id="imFNhXsGmpBJ" classfield_id="imFNhXsGmpBJ" text="return outputEnablePin;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Get the value of outputEnablePin&amp;#010;Default &quot;output enable&quot; output pin&amp;#010;@return the value of outputEnablePin"/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_9" accessType="1" parent_id="imFNhXsGmpBJ" classfield_id="imFNhXsGmpBJ" text="outputEnablePin = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Set the value of outputEnablePin&amp;#010;Default &quot;output enable&quot; output pin&amp;#010;@param value the value of outputEnablePin"/>
+         </header>
+        </codeaccessormethod>
+        <codeoperation tag="operation_VEEG5DCQyIfw" parent_id="VEEG5DCQyIfw" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Add a display group at the end of the data container. The variable pointed to&amp;#010;by value is used during the update of the display. Uses default digits code.&amp;#010;@param[in] name        Name of the display group&amp;#010;@param[in] id          Unique Id of the group&amp;#010;@param[in] nDisplay    Number of display contained in the group.&amp;#010;@param[in] value       Address of the variable to watch"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_Z77ISY7ayhX0" parent_id="Z77ISY7ayhX0" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Add a display group at the end of the data container. The variable pointed to&amp;#010;by value is used during the update of the display.&amp;#010;@param[in] name        Name of the display group&amp;#010;@param[in] id          Unique Id of the group&amp;#010;@param[in] nDisplay    Number of display contained in the group.&amp;#010;@param[in] value       Address of the variable to watch&amp;#010;@param[in] digits[]    Array of segment code to initialize all the display in&amp;#010;                       the group.&amp;#010;@param[in] sizeOfDigits Size of the digits code display"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_MDbDZWHCv87r" parent_id="MDbDZWHCv87r" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Add group to the DisplayManager. The group is inserted in the correct order,&amp;#010;given the index. The variable pointed to by value is used during the update&amp;#010;of the display. Uses default digits code.&amp;#010;@param[in] name        Name of the display group&amp;#010;@param[in] id          Unique Id of the group&amp;#010;@param[in] nDisplay    Number of display contained in the group&amp;#010;@param[in] index       Index for the group in the application&amp;#010;@param[in] value       Address of the variable to watch"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_kAqWG22P3Am4" parent_id="kAqWG22P3Am4" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Add group to the DisplayManager. The group is inserted in the correct order,&amp;#010;given the index. The variable pointed to by value is used during the update&amp;#010;of the display.&amp;#010;@param[in] name        Name of the display group&amp;#010;@param[in] id          Unique Id of the group&amp;#010;@param[in] nDisplay    Number of display contained in the group&amp;#010;@param[in] index       Index for the group in the application&amp;#010;@param[in] value       Address of the variable to watch&amp;#010;@param[in] digits[]    Array of segment code to initialize all the display in&amp;#010;                       the group.&amp;#010;@param[in] sizeOfDigits Size of the digits code display"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_WNb9ToVM2JfN" parent_id="WNb9ToVM2JfN" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Replace a group with the one built from the given parameters. The group is&amp;#010;inserted in the correct order, given the index. The variable pointed to by&amp;#010;value is used during the update of the display.&amp;#010;@param[in] id          Unique Id of the group to be replaced&amp;#010;@param[in] name        Name of the display group&amp;#010;@param[in] nDisplay    Number of display contained in the group&amp;#010;@param[in] value       Address of the variable to watch"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_NyHg9GS8iY9T" parent_id="NyHg9GS8iY9T" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Replace a group with the one built from the given parameters. The group is&amp;#010;inserted in the correct order, given the index. The variable pointed to by&amp;#010;value is used during the update of the display.&amp;#010;@param[in] id          Unique Id of the group to be replaced&amp;#010;@param[in] name        Name of the display group&amp;#010;@param[in] nDisplay    Number of display contained in the group&amp;#010;@param[in] value       Address of the variable to watch&amp;#010;@param[in] digits      Array of segment code to initialize all the display in&amp;#010;                       the group.&amp;#010;@param[in] sizeOfDigits Size of the digits code display"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_9QLaskPUW1Cw" parent_id="9QLaskPUW1Cw" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Remove a group from the manager&amp;#010;@param[in] id          Unique Id of the group"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_0nNNWBKgcfES" parent_id="0nNNWBKgcfES" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Clear all the groups from the manager"/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_Nevud7qkF6mg" parent_id="Nevud7qkF6mg" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Enable or disable a group, i.e. a binary zero will be transferred to the displays,&amp;#010;turning off all the segments. The displays, or the integrated logic could still be&amp;#010;on and powered.&amp;#010;@param[in] id          Unique Id of the group&amp;#010;@param[in] enable      True to enable the group or false to disable it. All the&amp;#010;                       segments will be off."/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_54KwwHH2YHgT" parent_id="54KwwHH2YHgT" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Update all the display group in the manager.&amp;#010;@return The index of the DisplayGroup with a failure in the update."/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_0SH6RlnWn5Sk" parent_id="0SH6RlnWn5Sk" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Sets the update byte order in the group given by index.&amp;#010;@param[in] id         Unique Id of the group&amp;#010;@param[in] order      Bit order: LSBFIRST or MSBFIRST."/>
+         </header>
+        </codeoperation>
+        <codeoperation tag="operation_rSqeXGMsw7mu" parent_id="rSqeXGMsw7mu" writeOutText="false" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Prints the vector of groups in a string object.&amp;#010;@return The string representation of the vector of groups."/>
+         </header>
+        </codeoperation>
+        <codeaccessormethod tag="hblock_tag_15" accessType="0" parent_id="sEsnd5yVxHuw" classfield_id="sEsnd5yVxHuw" text="return _groups;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag=""/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_16" accessType="1" parent_id="sEsnd5yVxHuw" classfield_id="sEsnd5yVxHuw" text="_groups = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag=""/>
+         </header>
+        </codeaccessormethod>
+       </textblocks>
+      </hierarchicalcodeblock>
+     </textblocks>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="fWKv9KMqDtAu" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="fWKv9KMqDtAu" indentLevel="1" text="static public const byte DEF_DIGITS;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Default digits code for small common cathode 7-segments display"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_0" accessType="0" parent_id="fWKv9KMqDtAu" classfield_id="fWKv9KMqDtAu" text="return DEF_DIGITS;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Get the value of DEF_DIGITS&amp;#010;Default digits code for small common cathode 7-segments display&amp;#010;@return the value of DEF_DIGITS"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_1" accessType="1" parent_id="fWKv9KMqDtAu" classfield_id="fWKv9KMqDtAu" text="DEF_DIGITS = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Set the value of DEF_DIGITS&amp;#010;Default digits code for small common cathode 7-segments display&amp;#010;@param value the value of DEF_DIGITS"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="tgtuSmibgvJV" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="tgtuSmibgvJV" indentLevel="1" text="static public const byte DEF_ORDER;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Default bit order for the shift"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_2" accessType="0" parent_id="tgtuSmibgvJV" classfield_id="tgtuSmibgvJV" text="return DEF_ORDER;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Get the value of DEF_ORDER&amp;#010;Default bit order for the shift&amp;#010;@return the value of DEF_ORDER"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_3" accessType="1" parent_id="tgtuSmibgvJV" classfield_id="tgtuSmibgvJV" text="DEF_ORDER = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Set the value of DEF_ORDER&amp;#010;Default bit order for the shift&amp;#010;@param value the value of DEF_ORDER"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="aFyxWyMASg5b" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="aFyxWyMASg5b" indentLevel="1" text="static public byte dataPin;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Default data output pin"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_4" accessType="0" parent_id="aFyxWyMASg5b" classfield_id="aFyxWyMASg5b" text="return dataPin;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Get the value of dataPin&amp;#010;Default data output pin&amp;#010;@return the value of dataPin"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_5" accessType="1" parent_id="aFyxWyMASg5b" classfield_id="aFyxWyMASg5b" text="dataPin = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Set the value of dataPin&amp;#010;Default data output pin&amp;#010;@param value the value of dataPin"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="zPRAJa4CEw4g" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="zPRAJa4CEw4g" indentLevel="1" text="static public byte clockPin;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Default clock output pin"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_6" accessType="0" parent_id="zPRAJa4CEw4g" classfield_id="zPRAJa4CEw4g" text="return clockPin;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Get the value of clockPin&amp;#010;Default clock output pin&amp;#010;@return the value of clockPin"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_7" accessType="1" parent_id="zPRAJa4CEw4g" classfield_id="zPRAJa4CEw4g" text="clockPin = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Set the value of clockPin&amp;#010;Default clock output pin&amp;#010;@param value the value of clockPin"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="imFNhXsGmpBJ" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="imFNhXsGmpBJ" indentLevel="1" text="static public byte outputEnablePin;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Default &quot;output enable&quot; output pin"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_8" accessType="0" parent_id="imFNhXsGmpBJ" classfield_id="imFNhXsGmpBJ" text="return outputEnablePin;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Get the value of outputEnablePin&amp;#010;Default &quot;output enable&quot; output pin&amp;#010;@return the value of outputEnablePin"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_9" accessType="1" parent_id="imFNhXsGmpBJ" classfield_id="imFNhXsGmpBJ" text="outputEnablePin = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" text="Set the value of outputEnablePin&amp;#010;Default &quot;output enable&quot; output pin&amp;#010;@param value the value of outputEnablePin"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="sEsnd5yVxHuw" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="sEsnd5yVxHuw" indentLevel="1" text="private std::vector&lt; DisplayGroup > _groups;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Vector of display group"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_15" accessType="0" parent_id="sEsnd5yVxHuw" classfield_id="sEsnd5yVxHuw" text="return _groups;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag=""/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_16" accessType="1" parent_id="sEsnd5yVxHuw" classfield_id="sEsnd5yVxHuw" text="_groups = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag=""/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+     </classfields>
+    </classifiercodedocument>
+    <classifiercodedocument package="-1" fileExt=".cpp" parent_class="cJzIeD6WSxH3" id="cJzIeD6WSxH3" fileName="Display" writeOutCode="true">
+     <textblocks>
+      <codeblockwithcomments tag="includes" text="#include &quot;display.h&quot;&amp;#010;">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <hierarchicalcodeblock tag="constructionMethodsBlock" canDelete="false">
+       <header>
+        <cppcodedocumentation tag="" text="Constructors/Destructors"/>
+       </header>
+       <textblocks/>
+      </hierarchicalcodeblock>
+      <hierarchicalcodeblock tag="otherMethodsBlock" canDelete="false">
+       <header>
+        <cppcodedocumentation tag="" text="Methods"/>
+       </header>
+       <textblocks>
+        <codeaccessormethod tag="hblock_tag_0" accessType="0" parent_id="AGe1SDtUlgkm" classfield_id="AGe1SDtUlgkm" text="return _digits;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag=""/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_1" accessType="1" parent_id="AGe1SDtUlgkm" classfield_id="AGe1SDtUlgkm" text="_digits = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag=""/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_2" accessType="0" parent_id="JWBf3Qi3Szme" classfield_id="JWBf3Qi3Szme" text="return _bitOrder;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag=""/>
+         </header>
+        </codeaccessormethod>
+        <codeaccessormethod tag="hblock_tag_3" accessType="1" parent_id="JWBf3Qi3Szme" classfield_id="JWBf3Qi3Szme" text="_bitOrder = value;" canDelete="false">
+         <header>
+          <cppcodedocumentation tag=""/>
+         </header>
+        </codeaccessormethod>
+       </textblocks>
+      </hierarchicalcodeblock>
+     </textblocks>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="AGe1SDtUlgkm" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="AGe1SDtUlgkm" indentLevel="1" text="private byte _digits;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="arrary of digits codes"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_0" accessType="0" parent_id="AGe1SDtUlgkm" classfield_id="AGe1SDtUlgkm" text="return _digits;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag=""/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_1" accessType="1" parent_id="AGe1SDtUlgkm" classfield_id="AGe1SDtUlgkm" text="_digits = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag=""/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="JWBf3Qi3Szme" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="" parent_id="JWBf3Qi3Szme" indentLevel="1" text="private byte _bitOrder;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="byte order of visualization: MSBFIRST (most significant&amp;#010;bit first) or LSBFIRST (least significant bit first))"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_2" accessType="0" parent_id="JWBf3Qi3Szme" classfield_id="JWBf3Qi3Szme" text="return _bitOrder;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag=""/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_3" accessType="1" parent_id="JWBf3Qi3Szme" classfield_id="JWBf3Qi3Szme" text="_bitOrder = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag=""/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+     </classfields>
+    </classifiercodedocument>
+    <classifiercodedocument package="Logical View" fileExt=".h" parent_class="htZKizVz1otq" id="cppheaderhtZKizVz1otq" fileName="byte" writeOutCode="true">
+     <textblocks/>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields/>
+    </classifiercodedocument>
+    <classifiercodedocument package="Logical View" fileExt=".h" parent_class="f6iQtSR5nQS2" id="cppheaderf6iQtSR5nQS2" fileName="String" writeOutCode="true">
+     <textblocks/>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields/>
+    </classifiercodedocument>
+    <classifiercodedocument package="Logical View" fileExt=".h" parent_class="xYFaOtGSkNTp" id="cppheaderxYFaOtGSkNTp" fileName="uint16_t" writeOutCode="true">
+     <textblocks>
+      <codeblockwithcomments tag="hashDefBlock" text="#ifndef UINT16_T_H&amp;#010;#define UINT16_T_H">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <codeblockwithcomments tag="includes" text="#include &lt;string>&amp;#010;">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <codeblockwithcomments tag="using" writeOutText="false">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <hierarchicalcodeblock tag="namespace" canDelete="false">
+       <header>
+        <cppcodedocumentation tag="" text="Namespace"/>
+       </header>
+       <textblocks>
+        <codeblockwithcomments tag="enums" writeOutText="false">
+         <header>
+          <cppcodedocumentation tag="" writeOutText="false"/>
+         </header>
+        </codeblockwithcomments>
+        <cppheaderclassdeclarationblock tag="classDeclarationBlock" parent_id="xYFaOtGSkNTp" canDelete="false">
+         <header>
+          <cppcodedocumentation tag="" text="Class uint16_t&amp;#010;"/>
+         </header>
+         <textblocks>
+          <hierarchicalcodeblock tag="publicBlock" canDelete="false">
+           <header>
+            <cppcodedocumentation tag="" text="Public stuff"/>
+           </header>
+           <textblocks>
+            <hierarchicalcodeblock tag="publicFieldsDecl" indentLevel="1" canDelete="false">
+             <header>
+              <cppcodedocumentation tag="" indentLevel="1" text="Fields"/>
+             </header>
+             <textblocks/>
+            </hierarchicalcodeblock>
+            <hierarchicalcodeblock tag="pubMethodsBlock" indentLevel="1" canDelete="false">
+             <header>
+              <cppcodedocumentation tag="" indentLevel="1"/>
+             </header>
+             <textblocks>
+              <hierarchicalcodeblock tag="constructionMethods" indentLevel="1" canDelete="false">
+               <header>
+                <cppcodedocumentation tag="" indentLevel="1" text="Constructors"/>
+               </header>
+               <textblocks>
+                <codeblockwithcomments tag="emptyconstructor" indentLevel="1" text="uint16_t ( ) { }">
+                 <header>
+                  <cppcodedocumentation tag="" indentLevel="1" text="Empty Constructor"/>
+                 </header>
+                </codeblockwithcomments>
+               </textblocks>
+              </hierarchicalcodeblock>
+              <hierarchicalcodeblock tag="accessorMethods" indentLevel="1" canDelete="false">
+               <header>
+                <cppcodedocumentation tag="" indentLevel="1" text="Accessor Methods"/>
+               </header>
+               <textblocks>
+                <hierarchicalcodeblock tag="pubStaticAccessorMethods" indentLevel="1" canDelete="false">
+                 <header>
+                  <cppcodedocumentation tag="" writeOutText="false" indentLevel="1"/>
+                 </header>
+                 <textblocks/>
+                </hierarchicalcodeblock>
+                <hierarchicalcodeblock tag="pubRegularAccessorMethods" indentLevel="1" canDelete="false">
+                 <header>
+                  <cppcodedocumentation tag="" writeOutText="false" indentLevel="1"/>
+                 </header>
+                 <textblocks/>
+                </hierarchicalcodeblock>
+               </textblocks>
+              </hierarchicalcodeblock>
+              <hierarchicalcodeblock tag="operationMethods" indentLevel="1" canDelete="false">
+               <header>
+                <cppcodedocumentation tag="" indentLevel="1" text="Operations"/>
+               </header>
+               <textblocks/>
+              </hierarchicalcodeblock>
+             </textblocks>
+            </hierarchicalcodeblock>
+           </textblocks>
+          </hierarchicalcodeblock>
+          <hierarchicalcodeblock tag="protectedBlock" canDelete="false">
+           <header>
+            <cppcodedocumentation tag="" text="Protected stuff"/>
+           </header>
+           <textblocks>
+            <hierarchicalcodeblock tag="protectedFieldsDecl" indentLevel="1" canDelete="false">
+             <header>
+              <cppcodedocumentation tag="" indentLevel="1" text="Fields"/>
+             </header>
+             <textblocks/>
+            </hierarchicalcodeblock>
+            <hierarchicalcodeblock tag="protMethodsBlock" indentLevel="1" canDelete="false">
+             <header>
+              <cppcodedocumentation tag="" indentLevel="1"/>
+             </header>
+             <textblocks>
+              <hierarchicalcodeblock tag="constructionMethods" indentLevel="1" canDelete="false">
+               <header>
+                <cppcodedocumentation tag="" indentLevel="1" text="Constructors"/>
+               </header>
+               <textblocks/>
+              </hierarchicalcodeblock>
+              <hierarchicalcodeblock tag="accessorMethods" indentLevel="1" canDelete="false">
+               <header>
+                <cppcodedocumentation tag="" indentLevel="1" text="Accessor Methods"/>
+               </header>
+               <textblocks>
+                <hierarchicalcodeblock tag="protStaticAccessorMethods" indentLevel="1" canDelete="false">
+                 <header>
+                  <cppcodedocumentation tag="" writeOutText="false" indentLevel="1"/>
+                 </header>
+                 <textblocks/>
+                </hierarchicalcodeblock>
+                <hierarchicalcodeblock tag="protRegularAccessorMethods" indentLevel="1" canDelete="false">
+                 <header>
+                  <cppcodedocumentation tag="" writeOutText="false" indentLevel="1"/>
+                 </header>
+                 <textblocks/>
+                </hierarchicalcodeblock>
+               </textblocks>
+              </hierarchicalcodeblock>
+              <hierarchicalcodeblock tag="operationMethods" indentLevel="1" canDelete="false">
+               <header>
+                <cppcodedocumentation tag="" indentLevel="1" text="Operations"/>
+               </header>
+               <textblocks/>
+              </hierarchicalcodeblock>
+             </textblocks>
+            </hierarchicalcodeblock>
+           </textblocks>
+          </hierarchicalcodeblock>
+          <hierarchicalcodeblock tag="privateBlock" canDelete="false">
+           <header>
+            <cppcodedocumentation tag="" text="Private stuff"/>
+           </header>
+           <textblocks>
+            <hierarchicalcodeblock tag="privateFieldsDecl" indentLevel="1" canDelete="false">
+             <header>
+              <cppcodedocumentation tag="" indentLevel="1" text="Fields"/>
+             </header>
+             <textblocks/>
+            </hierarchicalcodeblock>
+            <hierarchicalcodeblock tag="privMethodsBlock" indentLevel="1" canDelete="false">
+             <header>
+              <cppcodedocumentation tag="" indentLevel="1"/>
+             </header>
+             <textblocks>
+              <hierarchicalcodeblock tag="constructionMethods" indentLevel="1" canDelete="false">
+               <header>
+                <cppcodedocumentation tag="" indentLevel="1" text="Constructors"/>
+               </header>
+               <textblocks/>
+              </hierarchicalcodeblock>
+              <hierarchicalcodeblock tag="accessorMethods" indentLevel="1" canDelete="false">
+               <header>
+                <cppcodedocumentation tag="" indentLevel="1" text="Accessor Methods"/>
+               </header>
+               <textblocks>
+                <hierarchicalcodeblock tag="privStaticAccessorMethods" indentLevel="1" canDelete="false">
+                 <header>
+                  <cppcodedocumentation tag="" writeOutText="false" indentLevel="1"/>
+                 </header>
+                 <textblocks/>
+                </hierarchicalcodeblock>
+                <hierarchicalcodeblock tag="privRegularAccessorMethods" indentLevel="1" canDelete="false">
+                 <header>
+                  <cppcodedocumentation tag="" writeOutText="false" indentLevel="1"/>
+                 </header>
+                 <textblocks/>
+                </hierarchicalcodeblock>
+               </textblocks>
+              </hierarchicalcodeblock>
+              <hierarchicalcodeblock tag="operationMethods" indentLevel="1" canDelete="false">
+               <header>
+                <cppcodedocumentation tag="" indentLevel="1" text="Operations"/>
+               </header>
+               <textblocks/>
+              </hierarchicalcodeblock>
+             </textblocks>
+            </hierarchicalcodeblock>
+           </textblocks>
+          </hierarchicalcodeblock>
+         </textblocks>
+        </cppheaderclassdeclarationblock>
+       </textblocks>
+      </hierarchicalcodeblock>
+      <codeblockwithcomments tag="hashDefBlockEnd" text="#endif //UINT16_T_H">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+     </textblocks>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields/>
+    </classifiercodedocument>
+    <classifiercodedocument package="Logical View" fileExt=".h" parent_class="6H1guE8Is3CV" id="cppheader6H1guE8Is3CV" fileName="boolean" writeOutCode="true">
+     <textblocks/>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields/>
+    </classifiercodedocument>
+    <classifiercodedocument package="QrzJwecl6SQc" fileExt=".h" parent_class="hkSdrCVNHp9R" id="cppheaderhkSdrCVNHp9R" fileName="vector" writeOutCode="true">
+     <textblocks/>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields/>
+    </classifiercodedocument>
+    <classifiercodedocument package="Logical View" fileExt=".h" parent_class="I8fVgmOCsE3C" id="cppheaderI8fVgmOCsE3C" fileName="DisplayGroup" writeOutCode="true">
+     <textblocks>
+      <codeblockwithcomments tag="hashDefBlock" text="#ifndef DISPLAYGROUP_H&amp;#010;#define DISPLAYGROUP_H">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <codeblockwithcomments tag="includes" text="#include &lt;string>&amp;#010;#include &quot;.h&quot;&amp;#010;#include &quot;displaymanager.h&quot;&amp;#010;#include &quot;string.h&quot;&amp;#010;#include &quot;byte.h&quot;&amp;#010;#include &quot;boolean.h&quot;&amp;#010;">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <codeblockwithcomments tag="using" writeOutText="false">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <hierarchicalcodeblock tag="namespace" canDelete="false">
+       <header>
+        <cppcodedocumentation tag="" text="Namespace"/>
+       </header>
+       <textblocks>
+        <codeblockwithcomments tag="enums" writeOutText="false">
+         <header>
+          <cppcodedocumentation tag="" writeOutText="false"/>
+         </header>
+        </codeblockwithcomments>
+       </textblocks>
+      </hierarchicalcodeblock>
+      <codeblockwithcomments tag="hashDefBlockEnd" text="#endif //DISPLAYGROUP_H">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+     </textblocks>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="EoTLaWG1u8e0" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="tblock_0" parent_id="EoTLaWG1u8e0" indentLevel="1" text=" std::vector&lt; Display > _displays;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Vector of 7-segments displays"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_0" accessType="0" parent_id="EoTLaWG1u8e0" indentLevel="1" classfield_id="EoTLaWG1u8e0" text="return _displays;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Get the value of _displays&amp;#010;Vector of 7-segments displays&amp;#010;@return the value of _displays"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_1" accessType="1" parent_id="EoTLaWG1u8e0" indentLevel="1" classfield_id="EoTLaWG1u8e0" text="_displays = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Set the value of _displays&amp;#010;Vector of 7-segments displays&amp;#010;@param value the value of _displays"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="fiHZwDfD8Fhx" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="_2" parent_id="fiHZwDfD8Fhx" indentLevel="1" text=" String _name;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Name of the group"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_3" accessType="0" parent_id="fiHZwDfD8Fhx" indentLevel="1" classfield_id="fiHZwDfD8Fhx" text="return _name;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Get the value of _name&amp;#010;Name of the group&amp;#010;@return the value of _name"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_4" accessType="1" parent_id="fiHZwDfD8Fhx" indentLevel="1" classfield_id="fiHZwDfD8Fhx" text="_name = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Set the value of _name&amp;#010;Name of the group&amp;#010;@param value the value of _name"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="ovzrYhKkWn54" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="_5" parent_id="ovzrYhKkWn54" indentLevel="1" text=" byte _id;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Id of the DisplayGroup"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_6" accessType="0" parent_id="ovzrYhKkWn54" indentLevel="1" classfield_id="ovzrYhKkWn54" text="return _id;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Get the value of _id&amp;#010;Id of the DisplayGroup&amp;#010;@return the value of _id"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_7" accessType="1" parent_id="ovzrYhKkWn54" indentLevel="1" classfield_id="ovzrYhKkWn54" text="_id = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Set the value of _id&amp;#010;Id of the DisplayGroup&amp;#010;@param value the value of _id"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="HL5CRhA4NPeJ" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="_8" parent_id="HL5CRhA4NPeJ" indentLevel="1" text=" uint16_t* _value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Address of the value to be monitored"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_9" accessType="0" parent_id="HL5CRhA4NPeJ" indentLevel="1" classfield_id="HL5CRhA4NPeJ" text="return _value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Get the value of _value&amp;#010;Address of the value to be monitored&amp;#010;@return the value of _value"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_10" accessType="1" parent_id="HL5CRhA4NPeJ" indentLevel="1" classfield_id="HL5CRhA4NPeJ" text="_value = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Set the value of _value&amp;#010;Address of the value to be monitored&amp;#010;@param value the value of _value"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="cJViYAgK5fAd" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="_11" parent_id="cJViYAgK5fAd" indentLevel="1" text=" byte _nDisplay;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Number of display in the group"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_12" accessType="0" parent_id="cJViYAgK5fAd" indentLevel="1" classfield_id="cJViYAgK5fAd" text="return _nDisplay;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Get the value of _nDisplay&amp;#010;Number of display in the group&amp;#010;@return the value of _nDisplay"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_13" accessType="1" parent_id="cJViYAgK5fAd" indentLevel="1" classfield_id="cJViYAgK5fAd" text="_nDisplay = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Set the value of _nDisplay&amp;#010;Number of display in the group&amp;#010;@param value the value of _nDisplay"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="LSLpFQtUjxe8" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="_14" parent_id="LSLpFQtUjxe8" indentLevel="1" text=" byte _bitOrder;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Bit order in every display"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_15" accessType="0" parent_id="LSLpFQtUjxe8" indentLevel="1" classfield_id="LSLpFQtUjxe8" text="return _bitOrder;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Get the value of _bitOrder&amp;#010;Bit order in every display&amp;#010;@return the value of _bitOrder"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_16" accessType="1" parent_id="LSLpFQtUjxe8" indentLevel="1" classfield_id="LSLpFQtUjxe8" text="_bitOrder = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Set the value of _bitOrder&amp;#010;Bit order in every display&amp;#010;@param value the value of _bitOrder"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="eoD2DrJn8mWe" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="_17" parent_id="eoD2DrJn8mWe" indentLevel="1" text=" boolean _enabled;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Enable flag"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_18" accessType="0" parent_id="eoD2DrJn8mWe" indentLevel="1" classfield_id="eoD2DrJn8mWe" text="return _enabled;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Get the value of _enabled&amp;#010;Enable flag&amp;#010;@return the value of _enabled"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_19" accessType="1" parent_id="eoD2DrJn8mWe" indentLevel="1" classfield_id="eoD2DrJn8mWe" text="_enabled = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Set the value of _enabled&amp;#010;Enable flag&amp;#010;@param value the value of _enabled"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+     </classfields>
+    </classifiercodedocument>
+    <classifiercodedocument package="-1" fileExt=".h" parent_class="elLW3OWsHf2T" id="cppheaderelLW3OWsHf2T" fileName="DisplayManager" writeOutCode="true">
+     <textblocks>
+      <codeblockwithcomments tag="hashDefBlock" text="#ifndef DISPLAYMANAGER_H&amp;#010;#define DISPLAYMANAGER_H">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <codeblockwithcomments tag="includes" text="#include &lt;string>&amp;#010;#include &quot;displaygroup.h&quot;&amp;#010;#include &quot;.h&quot;&amp;#010;#include &quot;byte.h&quot;&amp;#010;#include &quot;string.h&quot;&amp;#010;#include &quot;boolean.h&quot;&amp;#010;#include &quot;uint16_t.h&quot;&amp;#010;">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <codeblockwithcomments tag="using" writeOutText="false">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <hierarchicalcodeblock tag="namespace" canDelete="false">
+       <header>
+        <cppcodedocumentation tag="" text="Namespace"/>
+       </header>
+       <textblocks>
+        <codeblockwithcomments tag="enums" writeOutText="false">
+         <header>
+          <cppcodedocumentation tag="" writeOutText="false"/>
+         </header>
+        </codeblockwithcomments>
+       </textblocks>
+      </hierarchicalcodeblock>
+      <codeblockwithcomments tag="hashDefBlockEnd" text="#endif //DISPLAYMANAGER_H">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+     </textblocks>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="fWKv9KMqDtAu" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="tblock_0" parent_id="fWKv9KMqDtAu" indentLevel="1" text="static  const byte DEF_DIGITS;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Default digits code for small common cathode 7-segments display"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_0" accessType="0" parent_id="fWKv9KMqDtAu" indentLevel="1" classfield_id="fWKv9KMqDtAu" text="return DEF_DIGITS;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Get the value of DEF_DIGITS&amp;#010;Default digits code for small common cathode 7-segments display&amp;#010;@return the value of DEF_DIGITS"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_1" accessType="1" parent_id="fWKv9KMqDtAu" indentLevel="1" classfield_id="fWKv9KMqDtAu" text="DEF_DIGITS = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Set the value of DEF_DIGITS&amp;#010;Default digits code for small common cathode 7-segments display&amp;#010;@param value the value of DEF_DIGITS"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="tgtuSmibgvJV" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="_2" parent_id="tgtuSmibgvJV" indentLevel="1" text="static  const byte DEF_ORDER;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Default bit order for the shift"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_3" accessType="0" parent_id="tgtuSmibgvJV" indentLevel="1" classfield_id="tgtuSmibgvJV" text="return DEF_ORDER;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Get the value of DEF_ORDER&amp;#010;Default bit order for the shift&amp;#010;@return the value of DEF_ORDER"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_4" accessType="1" parent_id="tgtuSmibgvJV" indentLevel="1" classfield_id="tgtuSmibgvJV" text="DEF_ORDER = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Set the value of DEF_ORDER&amp;#010;Default bit order for the shift&amp;#010;@param value the value of DEF_ORDER"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="aFyxWyMASg5b" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="_5" parent_id="aFyxWyMASg5b" indentLevel="1" text="static  byte dataPin;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Default data output pin"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_6" accessType="0" parent_id="aFyxWyMASg5b" indentLevel="1" classfield_id="aFyxWyMASg5b" text="return dataPin;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Get the value of dataPin&amp;#010;Default data output pin&amp;#010;@return the value of dataPin"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_7" accessType="1" parent_id="aFyxWyMASg5b" indentLevel="1" classfield_id="aFyxWyMASg5b" text="dataPin = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Set the value of dataPin&amp;#010;Default data output pin&amp;#010;@param value the value of dataPin"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="zPRAJa4CEw4g" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="_8" parent_id="zPRAJa4CEw4g" indentLevel="1" text="static  byte clockPin;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Default clock output pin"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_9" accessType="0" parent_id="zPRAJa4CEw4g" indentLevel="1" classfield_id="zPRAJa4CEw4g" text="return clockPin;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Get the value of clockPin&amp;#010;Default clock output pin&amp;#010;@return the value of clockPin"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_10" accessType="1" parent_id="zPRAJa4CEw4g" indentLevel="1" classfield_id="zPRAJa4CEw4g" text="clockPin = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Set the value of clockPin&amp;#010;Default clock output pin&amp;#010;@param value the value of clockPin"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="imFNhXsGmpBJ" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="_11" parent_id="imFNhXsGmpBJ" indentLevel="1" text="static  byte outputEnablePin;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Default &quot;output enable&quot; output pin"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_12" accessType="0" parent_id="imFNhXsGmpBJ" indentLevel="1" classfield_id="imFNhXsGmpBJ" text="return outputEnablePin;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Get the value of outputEnablePin&amp;#010;Default &quot;output enable&quot; output pin&amp;#010;@return the value of outputEnablePin"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_13" accessType="1" parent_id="imFNhXsGmpBJ" indentLevel="1" classfield_id="imFNhXsGmpBJ" text="outputEnablePin = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Set the value of outputEnablePin&amp;#010;Default &quot;output enable&quot; output pin&amp;#010;@param value the value of outputEnablePin"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="sEsnd5yVxHuw" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="_14" parent_id="sEsnd5yVxHuw" indentLevel="1" text=" std::vector&lt; DisplayGroup > _groups;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="Vector of display group"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_15" accessType="0" parent_id="sEsnd5yVxHuw" indentLevel="1" classfield_id="sEsnd5yVxHuw" text="return _groups;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_16" accessType="1" parent_id="sEsnd5yVxHuw" indentLevel="1" classfield_id="sEsnd5yVxHuw" text="_groups = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+     </classfields>
+    </classifiercodedocument>
+    <classifiercodedocument package="-1" fileExt=".h" parent_class="cJzIeD6WSxH3" id="cppheadercJzIeD6WSxH3" fileName="Display" writeOutCode="true">
+     <textblocks>
+      <codeblockwithcomments tag="hashDefBlock" text="#ifndef DISPLAY_H&amp;#010;#define DISPLAY_H">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <codeblockwithcomments tag="includes" text="#include &lt;string>&amp;#010;#include &quot;byte.h&quot;&amp;#010;">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <codeblockwithcomments tag="using" writeOutText="false">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+      <hierarchicalcodeblock tag="namespace" canDelete="false">
+       <header>
+        <cppcodedocumentation tag="" text="Namespace"/>
+       </header>
+       <textblocks>
+        <codeblockwithcomments tag="enums" writeOutText="false">
+         <header>
+          <cppcodedocumentation tag="" writeOutText="false"/>
+         </header>
+        </codeblockwithcomments>
+       </textblocks>
+      </hierarchicalcodeblock>
+      <codeblockwithcomments tag="hashDefBlockEnd" text="#endif //DISPLAY_H">
+       <header>
+        <cppcodedocumentation tag="" writeOutText="false"/>
+       </header>
+      </codeblockwithcomments>
+     </textblocks>
+     <header>
+      <codecomment tag=""/>
+     </header>
+     <classfields>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="AGe1SDtUlgkm" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="tblock_0" parent_id="AGe1SDtUlgkm" indentLevel="1" text=" byte _digits;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="arrary of digits codes"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_0" accessType="0" parent_id="AGe1SDtUlgkm" indentLevel="1" classfield_id="AGe1SDtUlgkm" text="return _digits;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_1" accessType="1" parent_id="AGe1SDtUlgkm" indentLevel="1" classfield_id="AGe1SDtUlgkm" text="_digits = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+      <codeclassfield role_id="-1" listClassName="" field_type="0" parent_id="JWBf3Qi3Szme" writeOutMethods="true" initialValue="">
+       <header>
+        <cppcodedocumentation tag=""/>
+       </header>
+       <ccfdeclarationcodeblock tag="_2" parent_id="JWBf3Qi3Szme" indentLevel="1" text=" byte _bitOrder;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1" text="byte order of visualization: MSBFIRST (most significant&amp;#010;bit first) or LSBFIRST (least significant bit first))"/>
+        </header>
+       </ccfdeclarationcodeblock>
+       <codeaccessormethod tag="hblock_tag_3" accessType="0" parent_id="JWBf3Qi3Szme" indentLevel="1" classfield_id="JWBf3Qi3Szme" text="return _bitOrder;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1"/>
+        </header>
+       </codeaccessormethod>
+       <codeaccessormethod tag="hblock_tag_4" accessType="1" parent_id="JWBf3Qi3Szme" indentLevel="1" classfield_id="JWBf3Qi3Szme" text="_bitOrder = value;" canDelete="false">
+        <header>
+         <cppcodedocumentation tag="" indentLevel="1"/>
+        </header>
+       </codeaccessormethod>
+      </codeclassfield>
+     </classfields>
+    </classifiercodedocument>
+   </codegenerator>
+  </codegeneration>
+ </XMI.extensions>
+</XMI>

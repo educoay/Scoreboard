@@ -1,0 +1,46 @@
+[General]
+def_graphic_ext=png
+img_extIsRegExp=false
+img_extensions=.eps .jpg .jpeg .png .pdf .ps .fig .gif
+kileprversion=2
+kileversion=2.1.0
+lastDocument=Scoreboard_Doc_en.tex
+masterDocument=
+name=Scoreboard
+pkg_extIsRegExp=false
+pkg_extensions=.cls .sty .bbx .cbx .lbx
+src_extIsRegExp=false
+src_extensions=.tex .ltx .latex .dtx .ins
+
+[Tools]
+MakeIndex=
+QuickBuild=
+
+[document-settings,item:Scoreboard_Doc_en.tex]
+Bookmarks=
+Encoding=ISO-8859-15
+FoldedColumns=
+FoldedLines=
+Highlighting=LaTeX
+Indentation Mode=none
+Mode=LaTeX
+ReadWrite=true
+
+[item:Scoreboard_Doc_en.tex]
+archive=true
+column=52
+encoding=ISO-8859-15
+highlight=LaTeX
+line=907
+mode=LaTeX
+open=false
+order=0
+
+[view-settings,view=0,item:Scoreboard_Doc_en.tex]
+CursorColumn=52
+CursorLine=907
+JumpList=
+ViMarks=
+ViRegisterContents=\s homeButtons.addButton(b2);\n  homeButtons.addButton(b1);\n
+ViRegisterFlags=1
+ViRegisterNames=0

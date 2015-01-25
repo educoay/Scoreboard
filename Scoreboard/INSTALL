@@ -1,0 +1,138 @@
+*********************************************************************************
+*                             SCOREBOARD project                                *
+*                          CONFIGURATION AND BUILD                              *
+*********************************************************************************
+
+
+The project can be built using Eclipse or a standard Unix makefile:
+
+*********************************************************************************
+ECLIPSE
+*********************************************************************************
+
+One way to build this project is to install Eclipse and the AVR plugin. 
+The instruction I followed for the configuration can be found at 
+http://horrorcoding.altervista.org/arduino-development-with-eclipse-a-step-by-step-tutorial-to-the-basic-setup/
+for Windows OS and at http://itpedia.nyu.edu/wiki/Arduino_in_Eclipse for Mac and Linux. 
+These instructions are for Mac but they work pretty straightforward on Linux too.
+On these links you can find some useful instructions and hints on Eclipse 
+configuration and AVR-GCC options:
+
+- http://andybrown.me.uk/wk/2010/10/17/setting-up-eclipse-for-avr-projects/
+- http://andybrown.me.uk/wk/2010/10/24/your-first-avr-project-in-eclipse/
+
+Once you have configured the Eclipse environment, you can import this project to 
+your workspace, and it should be already configured. 
+
+DEPENDENCIES
+
+This projects depends on some library which have to be linked against:
+- DisplayGroup:  http://display-group.googlecode.com/svn/trunk/display-group
+- AnalogButtons: http://playground.arduino.cc/Code/AnalogButtons
+
+You have to compile these libraries and include the respective folders in the 
+Eclipse project configuration (Properties --> C/C++ General --> Path and Symbols - Includes tab).
+You also have to configure the link process (Properties --> C/C++ General --> 
+Path and Symbols - Libraries). Add the 3 libraries mentioned before and the Arduino
+core library, which should be in the Lib subfolder (look in the section COMMON 
+OPTIONS at the bottom of this document for instruction on how to build this library)
+ 
+
+
+*********************************************************************************
+MAKEFILE
+*********************************************************************************
+
+It is possible to use command line interface and make command, look in the 
+Makefile folder.
+You need make utilities and AVR-GCC toolchain installed. In Ubuntu and derivates 
+this command should be enough:
+
+sudo apt-get install make avrdude binutils-avr gcc-avr avr-libc gdb-avr
+
+Look for instruction if you are using other Linux distribution or Windows. 
+The makefile needs some path to find the correct includes and tools:
+
+ARDUINO_DIR="path to the Arduino SDK toolkit"
+PROJECT_DIR="path to the project root directory"
+DISPLAYGROUP_DIR="path to the DisplayGroup root directory"
+ANALOG_BUT_DIR="path to the AnalogButtons root directory"
+
+AVRDUDE="path to the avrdude utility"
+
+MCU=atmega328p          #(CPU type, for AVR configuration)
+CPU_SPEED=16000000UL    #(CPU frequency, for AVR configuration)
+
+The makefile uses the same includes and compiler options used by Eclipse.
+
+DEPENDENCIES
+
+This projects depends on some library which has to be linked against:
+- DisplayGroup:  http://display-group.googlecode.com/svn/trunk/display-group
+- AnalogButtons: http://playground.arduino.cc/Code/AnalogButtons
+
+It might be necessary to change some names/path in the makefile to meet the 
+names/path you have for these libraries, especially in the linking process.
+
+
+
+*********************************************************************************
+COMMON OPTIONS
+*********************************************************************************
+
+Here are the options I used to build and run the project on an Arduino UNO board, 
+for BOTH ECLISPE AND MAKEFILE BUILD.
+
+You have to include some file from the Arduino SDK: 
+
+- arduino-x.x.x/hardware/arduino/cores/arduino
+- arduino-x.x.x/hardware/arduino/variants/standard
+
+and 
+
+- /opt/arduino-X.X.X/hardware/tools/avr/avr-stl/include
+
+which is a non standard include, in Arduino, to be able to compile with STL support. 
+The C++ Standard Template Library has been converted by Andy Brown and is available at 
+http://andybrown.me.uk/wk/2011/01/15/the-standard-template-library-stl-for-avr-with-c-streams/.
+The project uses vectors, iterator and reverse iterator from the STL.
+
+
+The link needs one more library, the Arduino core library: each Arduino project needs 
+to include this library. The file is compiled automatically by the Arduino IDE. While 
+you could compile it yourself in Eclipse, the easiest way to get it is to build a 
+simple sketch in the Arduino IDE, then copy the "core.a" file into your Eclipse project.
+
+- Start the Arduino IDE
+- Open the Blink sketch (File > Examples > Digital > Blink)
+- Click the "Verify" button to compile the sketch
+- Select Sketch > Show Sketch Folder
+- Drag core.a into your Eclipse project to copy it in the folder /Lib.
+- Right-click on core.a, select Rename and change it to "libcore.a"
+
+
+Some really useful setting for the AVR-GCC compiler are necessary to reduce the 
+size of the final application, when you link more library together:
+
+- http://andybrown.me.uk/wk/2010/10/24/recommended-avr-gcc-compiler-settings/
+
+In fact you have only few KB of flash memory available on the Arduino AVR CPU 
+(32KB for Arduino Uno), so size optimization matters.
+
+
+
+*********************************************************************************
+BUILD
+*********************************************************************************
+
+The building process is done completely by Eclipse IDE, and the generated makefile 
+will also use Avrdude utility at the end of the building to send the binary file 
+to Arduino, if it is connect to the computer.
+The new makefile in the active build configuration (in your project path) should 
+be created by Eclipse during configuration. So just build the project as you would 
+do for any other C++ project.
+
+ 
+If you used the makefile in the /Makefile folder, once the path are correct, type 
+make in the command line. Type make clean to clean the build folder.
+
