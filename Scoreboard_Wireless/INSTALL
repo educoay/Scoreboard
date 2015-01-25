@@ -28,7 +28,8 @@ DEPENDENCIES
 
 This projects depends on some library which have to be linked against:
 - DisplayGroup:  http://display-group.googlecode.com/svn/trunk/display-group
-- AnalogButtons: http://playground.arduino.cc/Code/AnalogButtons
+- AnalogButtonsGeneral: http://display-group.googlecode.com/svn/branches/wireless/AnalogButtons
+- SoftwareSerial: http://arduino.cc/en/Reference/SoftwareSerial
 
 You have to compile these libraries and include the respective folders in the 
 Eclipse project configuration (Properties --> C/C++ General --> Path and Symbols - Includes tab).
@@ -69,7 +70,8 @@ DEPENDENCIES
 
 This projects depends on some library which has to be linked against:
 - DisplayGroup:  http://display-group.googlecode.com/svn/trunk/display-group
-- AnalogButtons: http://playground.arduino.cc/Code/AnalogButtons
+- AnalogButtonsGeneral: http://display-group.googlecode.com/svn/branches/wireless/AnalogButtons
+- SoftwareSerial: http://arduino.cc/en/Reference/SoftwareSerial
 
 It might be necessary to change some names/path in the makefile to meet the 
 names/path you have for these libraries, especially in the linking process.

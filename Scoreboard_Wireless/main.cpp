@@ -16,8 +16,8 @@
  */
 
 /*
- * ScoreBoard project main file.
- * version 1.0.5
+ * ScoreBoard project main file. Wireless branch.
+ * version 1.0.0
  */
 
 #include <Arduino.h>
@@ -27,6 +27,7 @@
 
 #include <DisplayManager.h>
 #include <AnalogButtons.h>
+#include <SoftwareSerial.h>
 
 // Analog input buttons IDs
 #define TIMER_ANALOG_INPUT      5
@@ -57,19 +58,18 @@
 #define PERIOD_P1               11
 #define SETUP_MODE              12
 
-// Button held time
-#define HELD_DURATION           3
+// Button held time in s
+#define HELD_DURATION           1
 
 // Update display interval when idle in ms
 #define UPDATE_DISPLAY_INT      500
 
 // Period end horn/buzzer on time in ms
-#define BUZZER_ON_TIME          900
-#define BUZZER_ON_END_TIME      1300
+#define BUZZER_ON_TIME          1000
+#define BUZZER_ON_END_TIME      1500
 
 // Button debouncing and timer count
-#define DEBOUNCING_COUNT        75
-#define DEBOUNCING_COUNT_HOME   80
+#define DEBOUNCING_COUNT        2
 #define MIN_VALID_ANALOG_VALUE  15
 #define TIMER_INIT_MIN          10L
 #define TIMER_INIT_SEC          0L
@@ -78,6 +78,12 @@
 
 #define EEPROM_MAX_WRITE        100000        // Maximum number of erase-write cycles for EVERY EEPROM cell
 #define EEPROM_SIZE             1024          // EEPROM size in bytes
+
+// Xbee serial communication
+#define SOFT_SERIAL_IN          6
+#define SOFT_SERIAL_OUT         7
+#define XBEE_SOURCE_ADR         2
+#define N_ANALOG_INPUT          3
 
 // Timer macros
 #define START_STOP_TIMER(sreg,v) \
@@ -98,7 +104,7 @@ void configureAnalogB();
 
 void setupDiplay();
 
-  // Handle home buttons pressed
+// Handle home buttons pressed
 void handleHomeButtons(int id, boolean held);
 
 // Handle away buttons pressed and setup mode
@@ -123,15 +129,20 @@ void readEEPROM();
 // Prints on the serial interface the contents of all the EEPROM cells
 void printEEPROM();
 
+// Copies EEPROM data to the actual scoreboard variables
+void reloadFromEEPROM();
+
 // Buzzer managament: end of period or manual activation
 void buzzer(boolean activation);
 
+// Handle serial communication with Xbee
+void xbeeSerialCom(boolean debug);
 
 // ######################## Constants ########################
 
 // Analog input values read from digital buttons
 #ifdef PROTOTYPE
-const uint16_t bAVal[10] = { 65, 100, 125, 160, 240, 300, 340, 385 };
+const uint16_t bAVal[10] = { 65, 90, 110, 160, 235, 300, 335, 385 };
 #else
 const uint16_t bAVal[10] = { 50, 95, 110, 170, 200, 295, 310, 390 };
 #endif
@@ -183,6 +194,7 @@ struct persistentData {
   uint32_t counter;
   Score score;
   Time time;
+  boolean buzzerState;
 };
 
 // ####################### Variables #######################
@@ -197,13 +209,18 @@ boolean inputEnable = false;
 boolean buzzerFired = false;
 boolean buzzerManCmd = false;
 unsigned long upDisplayTime = 0;
+unsigned long upBatteryStatsTime = 0;
 unsigned long buzzerOnTime = 0;
 volatile unsigned long sec = 0;
+volatile unsigned long msec = 0;
 
 // Volleyball mode
 boolean volleyMode = false;
 Score vScore;
 Sets vSets;
+
+// Software serial input port (from Xbee)
+SoftwareSerial xbeeSerial(SOFT_SERIAL_IN, SOFT_SERIAL_OUT);
 
 
 // EEPROM wear leveling algorithm variables
@@ -219,6 +236,8 @@ uint16_t offsetEE;
 
 // Signal end of EEPROM life
 boolean endOfLifeEE = false;
+
+boolean led = false;
 
 // #########################################################
 // ############### 7-segment display library ###############
@@ -236,19 +255,19 @@ DisplayGroup::DisplayManager disManager(PIN_COM_DATA, PIN_COM_CLOCK, PIN_OUTPUT_
 // #########################################################
 // Configuration of digital buttons on the analog interface
 
-AnalogButtons homeButtons(HOME_ANALOG_INPUT, DEBOUNCING_COUNT_HOME, &handleHomeButtons);
+AnalogButtons homeButtons(DEBOUNCING_COUNT, &handleHomeButtons);
 Button b1 = Button(HOME_P1, bAVal[0], bAVal[1]);
 Button b2 = Button(HOME_P2, bAVal[2], bAVal[3]);
 Button b3 = Button(HOME_P3, bAVal[4], bAVal[5]);
 Button b4 = Button(HOME_M1, bAVal[6], bAVal[7]);
 
-AnalogButtons awayButtons(AWAY_ANALOG_INPUT, DEBOUNCING_COUNT, &handleAwayButtons);
+AnalogButtons awayButtons(DEBOUNCING_COUNT, &handleAwayButtons);
 Button b5 = Button(AWAY_P1, bAVal[0], bAVal[1]);
 Button b6 = Button(AWAY_P2, bAVal[2], bAVal[3]);
 Button b7 = Button(AWAY_P3, bAVal[4], bAVal[5]);
 Button b8 = Button(AWAY_M1, bAVal[6], bAVal[7]);
 
-AnalogButtons timerButtons(TIMER_ANALOG_INPUT, DEBOUNCING_COUNT, &handleTimerButtons);
+AnalogButtons timerButtons(DEBOUNCING_COUNT, &handleTimerButtons);
 Button b9 = Button(TIMER_START_STOP, bAVal[0], bAVal[1]);
 Button b10 = Button(TIMER_RESET, bAVal[2], bAVal[3], HELD_DURATION);
 Button b11 = Button(PERIOD_P1, bAVal[4], bAVal[5]);
@@ -267,7 +286,7 @@ void configureAnalogB() {
 void handleHomeButtons(int id, boolean held) {
 
 #ifdef DEBUG
-  Serial.println("HOME = ");
+  Serial.print("HOME = ");
   Serial.println(id);
 #endif
 
@@ -385,7 +404,7 @@ void handleAwayButtons(int id, boolean held) {
   unsigned char sreg;
 
 #ifdef DEBUG
-  Serial.println("AWAY = ");
+  Serial.print("AWAY = ");
   Serial.println(id);
 #endif
 
@@ -493,8 +512,10 @@ void handleTimerButtons(int id, boolean held) {
   unsigned char sreg;
 
 #ifdef DEBUG
-  Serial.println("TIMER = ");
-  Serial.println(id);
+  Serial.print("TIMER = ");
+  Serial.print(id);
+  Serial.print(", held = ");
+  Serial.println(held);
 #endif
 
   updateDisplay = true;
@@ -550,9 +571,7 @@ void handleTimerButtons(int id, boolean held) {
       // If setup mode is active reload values from EEPROM internal memory (basketball score)
       if (setupMode) {
         if (!volleyMode) {
-          bScore = dataEE.score;
-          time = dataEE.time;
-          sec = time.min * 60 + time.sec;
+          reloadFromEEPROM();
           return;
         } else return;
       }
@@ -603,6 +622,7 @@ void resetEEPROM() {
   data.time.min = 0;
   data.time.sec = 0;
   data.time.period = 0;
+  data.buzzerState = false;
 
   uint16_t size = sizeof(data);
 
@@ -652,13 +672,14 @@ boolean writeEEPROM() {
     counterEE = 1;
   }
 
-  if (offsetEE >= EEPROM_SIZE) {
+  if (offsetEE > EEPROM_SIZE - size) {
     return false;
   }
 
   data.counter = counterEE;
   data.score = bScore;
   data.time = time;
+  data.buzzerState = buzzerFired;
 
   eeprom_write_block((void*) &data, (void*) offsetEE, sizeof(data));
 
@@ -707,6 +728,12 @@ void printEEPROM() {
   }
 }
 
+void reloadFromEEPROM() {
+  bScore = dataEE.score;
+  time = dataEE.time;
+  sec = time.min * 60 + time.sec;
+  updateDisplay = true;
+}
 
 // Horn/buzzer management
 void buzzer(boolean activation) {
@@ -723,6 +750,8 @@ void buzzer(boolean activation) {
       buzzerOnTime = millis();
       digitalWrite(BUZZER_OUTPUT, LOW);
       buzzerFired = true;
+      // WriteEEPROM call to save the current state of the buzzer
+      writeEEPROM();
     }
   }
 
@@ -732,10 +761,6 @@ void buzzer(boolean activation) {
   }
 }
 
-
-// ========================================================
-// |                        SETUP                         |
-// ========================================================
 
 void setupDiplay() {
 #ifdef PROTOTYPE
@@ -755,12 +780,119 @@ void setupDiplay() {
 #endif
 }
 
+
+void xbeeSerialCom(boolean debug) {
+  int xbeeDel = 0x7E;
+  int car = 0;
+  int frameType = 0;
+  int sourceAdr = 0;
+  int sampleN = 0;
+  int analogReadings[N_ANALOG_INPUT];
+
+  if (xbeeSerial.available() >= 18) {
+
+    // Seek for the frame delimiter "xbeeDel", -1 indicates empty serial buffer
+    while ((car = xbeeSerial.read()) != xbeeDel) {
+      if (car == -1) {
+        return;
+      } else {
+        debug && Serial.print(car, HEX);
+        debug && Serial.print(" ");
+      }
+    }
+
+    debug && Serial.print(millis());
+    debug && Serial.print(" - ");
+
+    debug && Serial.print(car, HEX);
+    debug && Serial.print(" ");
+
+    // Reading API frame type 83 header
+    for (byte i = 2; i <= 8; ++i) {
+      car = xbeeSerial.read();
+
+      debug && Serial.print(car, HEX);
+      debug && Serial.print(" ");
+
+      if (i== 4) {
+        frameType = car;
+        if (frameType == 97) {
+          return;
+        }
+      } else if (i == 6) {
+        sourceAdr = car;
+      }
+    }
+
+    // Reading header of IO data frame
+    // Reading number of samples
+    sampleN = xbeeSerial.read();
+    debug && Serial.print(sampleN, HEX);
+    debug && Serial.print(" ");
+
+    // Reading IO channel enabled mask: not used
+    car = xbeeSerial.read();
+    debug && Serial.print(car, HEX);
+    debug && Serial.print(" ");
+
+    // Reading 0 byte
+    car = xbeeSerial.read();
+    debug && Serial.print(car, HEX);
+    debug && Serial.print(" ");
+
+    // Reading paylod: only ADC values
+    debug && Serial.println("|| ");
+    int msb[N_ANALOG_INPUT], lsb[N_ANALOG_INPUT];
+    for (byte j = 0; j < sampleN; ++j) {
+
+      for (byte i = 0; i < N_ANALOG_INPUT; ++i) {
+        msb[i] = xbeeSerial.read();
+        lsb[i] = xbeeSerial.read();
+        analogReadings[i] = lsb[i] + (msb[i] * 256);
+
+        debug && Serial.print(msb[i]);
+        debug && Serial.print(" + ");
+        debug && Serial.print(lsb[i]);
+        debug && Serial.print(" = ");
+        debug && Serial.print(analogReadings[i]);
+        if (i < N_ANALOG_INPUT - 1)
+          debug && Serial.print(", ");
+      }
+
+      if (j < sampleN - 1) {
+        debug && Serial.println(" | ");
+      }
+
+      // Analog input received, check for buttons pressed
+      // only if the Xbee source address is recognized
+      if (sourceAdr == XBEE_SOURCE_ADR) {
+        homeButtons.checkValue(analogReadings[0]);
+        awayButtons.checkValue(analogReadings[1]);
+        timerButtons.checkValue(analogReadings[2]);
+      }
+    }
+    debug && Serial.print(" || ");
+
+    // Reading checksum - at the end of the frame
+    car = xbeeSerial.read();
+    debug && Serial.println(car, HEX);
+    debug && Serial.println("");
+  }
+}
+
+// ========================================================
+// |                        SETUP                         |
+// ========================================================
+
 void setup() {
   pinMode(BUZZER_OUTPUT, OUTPUT);
 
   digitalWrite(BUZZER_OUTPUT, HIGH);
 
   Serial.begin(115200);
+
+  // Set the data rate for the SoftwareSerial port
+  xbeeSerial.begin(19200);
 
   // Display manager setup
   setupDiplay();
@@ -805,8 +937,10 @@ void setup() {
   TCCR1A = 0;     // set entire TCCR1A register to 0
   TCCR1B = 0;     // same for TCCR1B
 
-  // Set compare match register to desired timer count
+  // Set compare match register to desired timer count: 1hz increments
+  // OCR1A = (16*10^6) / (1*1024) - 1 (must be <65536)
   OCR1A = 15624;
+
   // Turn on CTC mode
   // TCCR1B |= (1 << WGM12);
   // Set CS10 and CS12 bits for 1024 prescaler
@@ -816,8 +950,9 @@ void setup() {
 
   // Enable timer compare interrupt:
   TIMSK1 |= _BV(OCIE1A);
+  // Clear interrupt flag
+  TIFR1 |= _BV(OCF1A);
   TCNT1 = 0;                // reset counter
-  TIFR1 |= _BV(OCF1A);      // clear interrupt flag
   sei();                    // Enable global interrupts
 
   disManager.updateAll();
@@ -826,6 +961,17 @@ void setup() {
   offsetEE = EEPROM_SIZE;
 
   endOfLifeEE = !initializeEEPROM();
+
+  // Automatically reload data from EEPROM if the buzzer was on during restart:
+  // the buzzer sometimes makes the CPU restart (caused by voltage drops),
+  // so if the buzzerState in EEPROM was still on when the CPU restared,
+  // the reset was caused by the buzzer and old data value must be reloaded
+  // from EEPROM at setup time
+  if (dataEE.buzzerState) {
+    reloadFromEEPROM();
+    // Writes new values to EEPROM
+    writeEEPROM();
+  }
 
   if (endOfLifeEE) {
     for (int i = 0; i < 20; ++i) {
@@ -856,6 +1002,13 @@ void loop() {
   sei();
   SREG = sreg;
 
+  // Serial input from Xbee interface
+#ifdef DEBUG
+  xbeeSerialCom(true);
+#else
+  xbeeSerialCom(false);
+#endif
+
   // Buzzer management
   buzzer((secLocal == 0 && timerRunning) || buzzerManCmd);
   buzzerManCmd = false;
@@ -874,7 +1027,6 @@ void loop() {
 
   // Update display on request and reset request bit
   if (updateDisplayLocal) {
-
     time.min = secLocal / 60;
     time.sec = secLocal % 60;
 
@@ -885,59 +1037,8 @@ void loop() {
 
   // Save score and time in EEPROM
   if (saveEEpromLocal) {
-    endOfLifeEE = !writeEEPROM();
+    writeEEPROM();
     saveEEpromLocal = false;
   }
 
-  // Prototype input always enabled
-#ifdef PROTOTYPE
-  inputEnable = true;
-#endif
-
-
-  // Analog input not connected
-  if (!inputEnable) {
-    int homeAnalogValue = analogRead(HOME_ANALOG_INPUT);
-    // Delay before the next analogRead, for the analog-to-digital converter
-    // to settle after the last reading
-    delay(10);
-    int awayAnalogValue = analogRead(AWAY_ANALOG_INPUT);
-    delay(10);
-    int timerAnalogValue = analogRead(TIMER_ANALOG_INPUT);
-    delay(4);
-
-    // This check works only if the analog input are kept low with a pull down
-    // resistor!
-    if (homeAnalogValue <= MIN_VALID_ANALOG_VALUE
-        && awayAnalogValue <= MIN_VALID_ANALOG_VALUE
-        && timerAnalogValue <= MIN_VALID_ANALOG_VALUE) {
-      inputEnable = true;
-    }
-  } else {
-    // Analog input connected, check for buttons pressed
-    homeButtons.checkButtons();
-    awayButtons.checkButtons();
-    timerButtons.checkButtons();
-
-    int homeAnalogValue = homeButtons.analogValue();
-    int awayAnalogValue = awayButtons.analogValue();
-    int timerAnalogValue = timerButtons.analogValue();
-
-#ifdef DEBUG
-  Serial.print("ANALOG V = ");
-  Serial.print(homeAnalogValue);
-  Serial.print(" ");
-  Serial.print(awayAnalogValue);
-  Serial.print(" ");
-  Serial.println(timerAnalogValue);
-#endif
-
-    // The analog inputs have been disconnected: "random" value will be on
-    // each analog port (usually much greater than 0)
-    if (homeAnalogValue > MIN_VALID_ANALOG_VALUE
-        && awayAnalogValue > MIN_VALID_ANALOG_VALUE
-        && timerAnalogValue > MIN_VALID_ANALOG_VALUE) {
-      inputEnable = false;
-    }
-  }
 } // End of loop

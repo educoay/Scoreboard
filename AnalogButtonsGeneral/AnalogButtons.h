@@ -34,6 +34,13 @@
  
  by Neil DUdman and everyone who's ever used Arduino
  
+
+ 11 May 2014:
+
+   Modification to export the analog value to be read outside of the library,
+   into the application code. This is necessary to use, for example, a wireless
+   sensor that retreive the readings from a serial connection. So the sensors
+   or buttons are NOT physically connected to the Arduino analog input.
  */
 
 #include <Arduino.h>
@@ -47,7 +54,7 @@ public:
   int BUTTON_L;
   int BUTTON_H;     
 
-  // for additional functions HOLD
+  // For additional functions HOLD
   unsigned long duration;
   boolean isHeldDown;  
   
@@ -64,16 +71,11 @@ public:
 class AnalogButtons 
 {
 private:  
-  // for hold button, duration is specified for each button
+  // For hold button, duration is specified for each button
   unsigned long previousMillis;
-  
-  // AnalogPin
-  int pin;
-  int analogV;
   
   // Debouncing of normal pressing
   int debounce_count;
-  long time;
   int counter;
   
   // Status of last press
@@ -82,20 +84,45 @@ private:
   Button buttons[MAXBUTTONS];
   int buttonsIndex;
   
-  // registered Callback function
+  /**
+   * Registered Callback function
+   *
+   * @param[in]     Button ID
+   * @param[in]     True if button held
+   */
   void (*pt2Function)(int, boolean);    
   
 public:
-  AnalogButtons(int ppin, int ddebounce_count = 100, void (*pt2Func)(int, boolean) = 0);
+
+  static const int MAX_ANALOG_V = 1023;         // Maximum analog value that can be read from the ADC
+  static const int DEF_DEBOUNCE_COUNT = 100;    // Default button debouncing count
+
+  /**
+   * AnalogButtons defaul constructor
+   *
+   * @param[in] ddebounce_count     Button debouncing count
+   * @param[in] *pt2Func            Callback function pointer
+   */
+  AnalogButtons(int ddebounce_count = DEF_DEBOUNCE_COUNT, void (*pt2Func)(int, boolean) = 0);
   
+  /**
+   * Adds a button object to this analog input
+   *
+   * @param[in] b                   Button instance
+   */
   int addButton(Button b);
   
-  void checkButtons();
+  /**
+   * Checks the current input value
+   *
+   * @param[in] analogV             analog input value
+   */
+  void checkValue(int analogV);
   
-  int analogValue();
-
-  // Press each button in turn and note the values returned to 
-  // Serial monitor
+  /**
+   * Debug helper: press each button in turn and note the values
+   * returned to serial monitor
+   */
   static void configure(int pin);
 };
 

@@ -3,7 +3,8 @@ CXX=avr-g++
 ARDUINO_DIR=/opt/arduino
 PROJECT_DIR=..
 DISPLAYGROUP_DIR=../../DisplayGroup
-ANALOG_BUT_DIR=../../AnalogButtons
+ANALOG_BUT_DIR=../../AnalogButtonsGeneral
+SOFTSERIAL_DIR=../../SoftwareSerial
 
 # avr tools path
 AVR_OBJCOPY=avr-objcopy
@@ -22,6 +23,7 @@ PORT=/dev/ttyACM0
 # Include (dependencies: displaygroup, timedaction, analogbuttons, avr-stl, arduino)
 INCLUDE=-I$(DISPLAYGROUP_DIR)\
 -I$(ANALOG_BUT_DIR)\
+-I$(SOFTSERIAL_DIR)\
 -I$(ARDUINO_DIR)/hardware/tools/avr/avr-stl/include\
 -I$(ARDUINO_DIR)/hardware/arduino/variants/standard\
 -I$(ARDUINO_DIR)/hardware/arduino/cores/arduino
@@ -29,12 +31,13 @@ INCLUDE=-I$(DISPLAYGROUP_DIR)\
 # Libraries (dependencies: displaygroup, timedaction, analogbuttons, core)
 LIBS=-L$(DISPLAYGROUP_DIR)/Makefile\
 -L$(ANALOG_BUT_DIR)/Release\
+-L$(SOFTSERIAL_DIR)/Release\
 -L$(PROJECT_DIR)/Lib\
--ldisplaygroup -lanalogbuttons -lcore
+-ldisplaygroup -lanalogbuttonsgen -lsoftwareserial -lcore
 
 # Source file and application name
 OBJ=main
-TARGET=ScoreBoard
+TARGET=ScoreBoard_Wi
 
 CFLAGS=-Wall -Wno-unused-local-typedefs -Os -fpack-struct -fshort-enums -funsigned-char -funsigned-bitfields\
 -fno-exceptions -ffunction-sections -fdata-sections -fno-use-cxa-atexit -mmcu=$(MCU) -DF_CPU=$(CPU_SPEED) -MMD -MP -MF"$(OBJ).d" -MT"$(OBJ).d"

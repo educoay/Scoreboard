@@ -14,6 +14,8 @@
 \usepackage{pxfonts}
 \usepackage{hyperref}
 \usepackage{lmodern}
+\usepackage{subfig}
+\usepackage{multirow}
 % To place footnotes at the bottom of the page
 \usepackage[bottom]{footmisc}
 
@@ -95,6 +97,9 @@
 %  Style for code names into text 
 \newcommand{\code}[1]{\texttt{#1}}
 
+% Overline in text mode
+\newcommand{\textoverline}[1]{$\overline{\mbox{#1}}$}
+
 
 \begin{document}
 
@@ -108,7 +113,9 @@
 with 7-segments displays\\
 and Arduino
 ~\\[0.8cm]
-version 1.0.2}
+version 0.8}
+\large{~\\[0.8cm]
+Revamped with wireless controller!!}
 ~\\[1.6cm]
 
 \includegraphics[scale=0.30]{img/Scoreboard}
@@ -158,7 +165,7 @@ where I found the inspiration to build this scoreboard, and from which I took so
 design hints. The site is run by Mr. Kianoosh Salami, who was really helping me in the 
 process of finding the components and building the board.
 
-I have also to thank many of my friends for the help, the knowledge the gave me and the
+I have also to thank many of my friends for the help, the knowledge they gave me and the
 inspiration derived from the discovery of the \textquotedblleft Do it yourself\textquotedblright 
 electronic field, represented by the Italian Arduino platform.   
 
@@ -356,6 +363,269 @@ By using this cabled solution I was able to control the scoreboard with a quite 
 while keeping the realization cost low. The other solution would be a wireless communication, but that 
 would also be more expensive.
 
+
+\subsection{Wireless Extension}\label{subsec:hd-wireless}
+
+The wireless communication was not needed by the time I realized the first version of the scoreboard, but 
+then, after 2 years of good use of the system, my basketball team was able to switch championship.. to an 
+upper level! So new championship means new rules!
+The space between the field border and the wall on the scoreboard side was not enough for the new, more strict,
+rules. We needed to move the service desk to the other side of the field. The cable between the control panel 
+and the scoreboard would have been way too long and difficult to place, so this is when the wireless saga began!    
+
+The research for the right components took me months, as I was looking for all these features;
+\begin{itemize}
+ \item fast enough and reliable communication, even with many disturbances (cellphones, etc..);
+ \item wireless range cover (20-30 meters);
+ \item small components to fit in the control panel I had already, without changing anything inside;
+ \item long battery life;
+ \item easy realization, homemade as always!
+\end{itemize}
+
+I found the XBee RF Modules \footnote{\url{http://www.digi.com/products/wireless-wired-embedded-solutions/zigbee-rf-modules/point-multipoint-rfmodules/xbee-series1-module}} to meet the unique needs of low-cost, low-power wireless sensors, 
+since they require minimal power and provide reliable delivery of data between devices. For the purpose of this 
+application I used the Xbee 802.15.4 Series 1 module, which are more than enough for me, and not too much expensive:
+
+\begin{itemize}  
+ \item Indoor/Urban range up to 100 feet (30 m) 
+ \item TX Peak Current: 45 mA (@3.3 V)
+ \item RX Current: 50 mA (@3.3 V)
+ \item Transmit Power: 1 mW (0 dBm)
+ \item Receiver Sensitivity: -92 dBm  
+\end{itemize}
+
+These Xbee module are also equipped with an on board analog to digital converter, so that I could connect my buttons 
+board directly to the Xbee: all the hard work of collecting the samples and sending them over the air is done by the 
+module! The Xbee are also really easy to configure, and they have a lot of options.
+
+I decide to use a power switching IC to optimize the battery power usage, and I wanted to use two standard AA sized
+Alkaline battery. The power consumption is really low during data transmission but I wanted to keep everything even 
+lower and use some of the intelligent Xbee features like hibernation (\emph{sleep mode}). These two requirements gave 
+me the possibility to learn a lot on power management in electronic devices, and even on using and programming small
+MCU not related to Arduino. 
+
+\subsubsection{Transmitter board}\label{subsec:hd-wireless_trans}
+
+The picture \ref{fig:board-trans-sch} shows the schematic circuit for the transmitter board I designed. It is base on some main 
+component and a some auxiliary components that are needed to make everything work smoothly.
+
+%
+\begin{figure}[htb]
+\centering\includegraphics[scale=0.65]{img/Transmitter}
+
+\caption{Transmitter board schematic \label{fig:board-trans-sch}}
+
+\end{figure}
+
+The real board is manufactured by the Seeed Studio Fusion PCB service \footnote{\url{https://www.seeedstudio.com/service/index.php?r=pcb}}, (yes... this one is too cluttered to be made by hand),  
+really fast and easy to use service from China. The board is in picture \ref{fig:board-trans}, the quality is good and 
+the price is well worth the product you'll get.
+The schematic and board file made with Eagle are available in the Google Code site of this project, in the download page. 
+
+\begin{figure}[htb]%
+    \centering
+    \subfloat[]{{\includegraphics[width=4cm]{img/Trans_board} }}%
+    \qquad
+    \subfloat[]{{\includegraphics[width=4cm]{img/Trans_board_comp} }}%
+    \caption{Transmitter board from Seeed Studio (a), and board with components (b)}%
+    \label{fig:board-trans}%
+\end{figure}
+
+The power converter is a Maxim MAX757 switching power regulator\footnote{\url{http://www.maximintegrated.com/en/products/power/switching-regulators/MAX757.html}}, 
+connected as shown in the datasheet, with a LED connected on the LBO output, to signal the end of battery life with some 
+time in advance. The threshold for the battery voltage to signal the battery as empty is set with R3 and R4, all the details 
+are given in the datasheet. 
+
+Figure \ref{fig:board-battery} shows the circuit working region with and without the step-up regulator: some digital component like 
+Xbee can work with not less than 2.8V as Vcc, this makes 1.4V per battery (with two batteries connected in series).
+In figure \ref{fig:board-battery}:A the minimum level of 1.4V is reached at $t_1$, which is about 2.5 hours of running time, 
+at constant 100mA discharge current, 21 °C. With a power regulator like the MAX757, that can work down to 0.7V of input 
+supply voltage, the working region is extended like in \ref{fig:board-battery}:B. The level 0.8V is reached at $t_1$, almost 
+at 28 running hours, and the regulator is still working in good conditions, with a constant output voltage of 3.3V to supply 
+the Xbee and the rest of the circuit for much more time. Figure \ref{fig:board-battery} is just for demonstration purpose.
+    
+%
+\begin{figure}[htb]
+\centering\includegraphics[scale=0.8]{img/Battery}
+
+\caption{Typical alkaline battery discharge curve, with working region for the circuit: (a) without power regulator, (b) with 
+power regulator\label{fig:board-battery}}
+
+\end{figure}
+
+The typical auxiliary circuit for the regulator is better explained in the datasheet, for the purpose of this application 
+I have just added a transistor controlled by the LBO output, to switch on the LED without current drain from the IC itself.
+The LBO output is only capable of 2mA, not enough to turn on the LED2 to be visible. 
+
+The micro-controller in figure \ref{fig:board-trans} is a Atmel AVR ATTiny 85V\footnote{\url{http://www.atmel.com/devices/attiny85.aspx}}, 
+ultra low voltage MCU. It is used to wake up the Xbee module only when necessary, so that the Xbee can sleep most of the time.
+When the Xbee is Pin Hibernate mode uses only 10uA, much less than transmitting current 45mA. In this mode the Xbee can be 
+waken up only by setting low the line on input 9 \textoverline{DRT}/SLEEP\_RQ, and this is the job of the micro-controller.
+The MCU watch the 3 analog inputs to detect a pressed button, and wakes up the Xbee. The Xbee will sample the data from 
+the same analog channels and send it over the RF link. The code running on the MCU is described in listing \ref{lis-attiny}.
+
+The LED1 is used to signal that the Xbee is awake.
+
+The JP2 connector is directly connected to the board in figure \ref{fig:panel-board}, providing power (3.3V) and retrieving 
+the three analog values from the buttons. These lines will be sampled by the Xbee and transmitted to the other Xbee in the 
+scoreboard in a \emph{autonomous way}, once the Xbee are configured correctly.
+
+The capacitors C1, C2, C4 and C5 are filters on the power supply; they are needed to provide a constant, smooth voltage 
+to the integrated components. The regulator itself works in a region were it's switching frequency is about 100kHz (datasheet)
+but the Xbee requires at least 500kHz as a good recommendation on the power supply. I couldn't find another regulator with 
+the same features and higher switching frequency, so I added some big electrolytic capacitors to minimize the voltage ripple.
+The analog values are almost constant and all the ICs are working correctly! 
+
+
+\subsubsection{Receiver board}\label{subsec:hd-wireless_rec}
+
+The picture \ref{fig:board-rec-sch} shows the schematic circuit for the receiver board, which is mounted on the back of 
+the scoreboard, near Arduino and the displays. 
+The board is home made with a really nice technique used to create PCBs, called Press-n-Peel\footnote{\url{http://www.techniks.com/how_to.htm}}, 
+which is easy and you can get beautiful PCB in short time. 
+%
+\begin{figure}[htb]
+\centering\includegraphics[scale=1.0]{img/Receiver}
+
+\caption{Receiver board schematic \label{fig:board-rec-sch}}
+
+\end{figure}
+
+The board is made of a low dropout linear voltage regulator, this time with input up to 16V, to use the power supply voltage
+on the scoreboard which is 12V. The output is fixed 3.3V to supply the Xbee module, with filtering capacitor as shown in 
+the datasheet. The Xbee DOUT line is directly connected to the serial input pin of the Arduino, while the DIN line from 
+Arduino [0, 5V] is buffered with a voltage divider, to take the signal in the range [0, 3.3V] to be compatible with the Xbee.
+LED1 is used to show the strength of the received signal (RSSI), and LED2 is used to indicate that this Xbee is associated 
+with another node in the network.
+
+The complete board is shown in picture \ref{fig:board-trans-comp}, the Xbee used here has the RPSMA connector, with a 
+long WIFI antenna, which is long enough to take the receiving part outside of the scoreboard metal cage. 
+This Xbee module with this type of antenna is a little bit more expensive than the standard ones, but it was the most easy 
+way I found to avoid problems like disturbances or signal degradation at the receiving site.
+
+\begin{figure}[H]%
+    \centering
+    \subfloat[]{{\includegraphics[width=5.5cm]{img/Rec_board} }}%
+    \qquad
+    \subfloat[]{{\includegraphics[width=7cm]{img/Rec_board_comp} }}%
+    \caption{Receiver board, bottom layer (a), and board with components (b)}%
+    \label{fig:board-trans-comp}%
+\end{figure}
+
+\subsubsection{Xbee configuration - transmitter}\label{subsec:hd-xbee_config_trans}
+
+The transmitter Xbee is able to sample the ADC data from the input lines, build the serial data frame according to the 
+frame type RX Packet, 16-bit Address IO (API Identifier Value: 0x83), and send the frame to the UART. If the 
+\textoverline{DRT}/SLEEP\_RQ line is high the Xbee will switch to the configured sleep mode once has finished the packet 
+transmission. To achieve this kind of behavior the configuration is set as in table \ref{tab:trans-param}, where only non-default 
+parameters are shown.
+
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ |l|l|l|l| }
+\hline
+\multicolumn{4}{ |c| }{\large{\textbf{Transmitter Xbee configuration}}} \\
+\hline
+\textbf{Section} & \textbf{Parameter} & \textbf{Value} & \textbf{Description} \\ \hline
+\multirow{5}{*}{Network \& Security} & CH & 10 & Channel \\
+ & ID & 3340 & PAN ID \\
+ & DH & 13A200 & Destination Xbee address high part \\
+ & DL & 40A191C7 & Destination Xbee address low part \\ 
+ & MY & 2 & 16Bit source address\\ \hline
+\multirow{3}{*}{Sleep modes} & SM & 1 & Sleep mode \\
+ & ST & 1 & Time before sleep \\
+ & DP & 14 & Disassociated cyclic sleep period  \\ \hline
+\multirow{1}{*}{Serial interfacing} & BD & 3 & Interface data rate \\ \hline
+\multirow{6}{*}{I/O Settings} & D5 & 0 & DIO5 configuration \\ 
+ & D3 & 2 & DIO3 configuration \\
+ & D2 & 2 & DIO2 configuration \\
+ & D1 & 2 & DIO1 configuration \\
+ & IT & 2 & Sample before transmission \\
+ & IR & 28 & Sample rate \\ \hline
+\end{tabular}
+\caption{Transmitter Xbee configuration parameters}%
+\label{tab:trans-param}%
+\end{center}
+\end{table}
+
+The sleep mode is Pin Hibernate, which provides the best energy save, and the time before sleep is as short as possible.
+DIO1-2-3 are used as analog input, sample are taken every 64ms (28 Hex) when Xbee is awake, and a package is sent every 
+2 samples collected, so every 128ms. This is fast enough to provide sufficient response time when a button is pressed: the 
+time needed for two consecutive buttons to get to Arduino is usually less the 300ms, enough to stop and start the timer with 
+the precision I wanted for this application.
+
+\subsubsection{Xbee configuration - receiver}\label{subsec:hd-xbee_config_rec}
+
+The receiver Xbee is configured as the network coordinator (even if this is not a meshed, multinode network...), it simply 
+listens on the radio interface for packages from the transmitting node. When a frame is received the Xbee sends it 
+to the Arduino via a simple serial interface. The configuration is shown in table \ref{tab:rec-param}.
+
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{ |l|l|l|l| }
+\hline
+\multicolumn{4}{ |c| }{\large{\textbf{Receiver Xbee configuration}}} \\
+\hline
+\textbf{Section} & \textbf{Parameter} & \textbf{Value} & \textbf{Description} \\ \hline
+\multirow{5}{*}{Network \& Security} & CH & 10 & Channel \\
+ & ID & 3340 & PAN ID \\
+ & DH & 0 & Destination Xbee address high part \\
+ & DL & 0 & Destination Xbee address low part \\ 
+ & MY & 1 & 16Bit source address\\ 
+ & CE & 1 & Coordinator enable \\ \hline
+\multirow{1}{*}{Sleep modes} & DP & 14 & Diassociated cyclic sleep period  \\ \hline
+\multirow{1}{*}{Serial interfacing} & BD & 3 & Interface data rate \\ \hline
+\end{tabular}
+\caption{Receiver Xbee configuration parameters}%
+\label{tab:rec-param}%
+\end{center}
+\end{table}
+
+The serial interface data rate to Arduino is limited to 19200 baud, because of some problem with clock synchronization 
+between the Xbee and Arduino. This speed was enough for my needs, so I decided to keep the slower (and more reliable) speed.
+
+Some more information regarding this timing problems can be found at the Digi forum\footnote{\url{http://www.digi.com/support/forum/4787/using-the-xbee-at-115-200-baud-updated-16-march-2010}}, 
+and in other unofficial resources on the Internet. 
+
+
+\subsubsection{ATtiny configuration}\label{subsec:hd-attiny_config}
+
+The ATtiny85 MCU on the transmitter board is configured to minimize the power consumption, and is used to monitor the analog 
+signal more often than the Xbee, with much less current drained.
+The configuration is done via software, as the following code shows:
+%
+\begin{lstlisting}[label=lis:ATtiny-config,caption=ATtiny85V configuration]
+void setup() {
+  pinMode(WAKE_OUTPUT, OUTPUT);
+  digitalWrite(WAKE_OUTPUT, HIGH);
+
+  // Setup watchdog timeout
+  setup_watchdog(0);
+
+  // Set the internal registers to reduce power consumes
+  PRR &= ~(1<<PRTIM1);		// Shut down the timer1
+  ACSR = (1<<ACD);		// Shut down the analog comparator
+  MCUCR |= (1<<BODS);		// BOD disabled
+
+} // End of setup
+\end{lstlisting}
+
+Timer1, analog comparator and BOD protection are tunerd off by defautl. When the MCU wakes up, the ADC convert is turned on, 
+and then back off before the MCU sleeps again.
+
+The sleep mode is \code{SLEEP\_MODE\_PWR\_DOWN}: in this mode the oscillator is stopped, while the external interrupts, the USI 
+start condition detection and the watchdog continue operating.
+The watchdog interrupt is used to wake the MCU every a predefined amount of time, in this case 16ms, through the function 
+\code{setup\_watchdog(0)}, which sets the watchdog timeout in the MCU registers.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Hardware END - software BEGIN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \pagebreak
 
 \section{Software}
@@ -366,7 +636,7 @@ project explain where to find those libraries, and then you can understand how t
 rest of the compilation process is done by Eclipse or by the makefile. Also the flashing of the program 
 on the Arduino program memory is automatically done, provided that all the needed tools are installed.
 
-\subsection{Dependences}\label{subsec:dep}
+\subsection{Dependencies}\label{subsec:dep}
 
 The most important dependence is the DisplayGroup library, which has already been described in the 
 documentation at the project folder, on the Google code svn server (INSTALL file). This library is needed 
@@ -389,13 +659,18 @@ where \code{score} and \code{time} are struct I used to keep information regardi
 actual time. \code{gDigits7} and \code{gDigit4} are arrays of segments code, necessary for the library 
 configuration, respectively for 7 inches and 4 inches displays. 
 
-The second dependence library is AnalogButtons \footnote{\url{http://playground.arduino.cc/Code/AnalogButtons}},
-used to control many digital inputs through few analog inputs from the Arduino interface. The configuration 
-for this library is:
+The second dependence library is AnalogButtonsGeneral, which is a slighlty modified version of AnalogButtons\footnote{\url{http://playground.arduino.cc/Code/AnalogButtons}},
+and is used to control many digital inputs through few analog inputs from the Xbee analog to digital interface. 
+
+This library has been modified to export the analog value to be read outside of the it's own code, into the application source. 
+This is necessary to use, for example, a wireless sensor that reads the analog values and sends them on a serial connection. 
+In general this is a required step every time the sensors or buttons are not physically connected to the Arduino analog input.
+
+The configuration for this library is identical to the one of the original AnalogButtons library:
 %
-\begin{lstlisting}[label=lis:buttons-config,caption=AnalogButtons configuration]
+\begin{lstlisting}[label=lis:buttons-config,caption=AnalogButtonsGeneral configuration]
 // Patch cable
-const uint16_t bAVal[10] = { 60, 90, 120, 150, 250, 295, 340, 375 };
+const uint16_t bAVal[10] = { 50, 95, 110, 170, 200, 295, 310, 390 };
 
 
 AnalogButtons homeButtons(HOME_ANALOG_INPUT, DEBOUNCING_COUNT_HOME, &handleHomeButtons);
@@ -416,31 +691,58 @@ Button b10 = Button(TIMER_RESET, bAVal[2], bAVal[3], HELD_DURATION);
 Button b11 = Button(PERIOD_P1, bAVal[4], bAVal[5]);
 Button b12 = Button(SETUP_MODE, bAVal[6], bAVal[7], HELD_DURATION);
 
-...
+void setup() {
+  ...
 
-// Input Buttons
-homeButtons.addButton(b2);
-homeButtons.addButton(b1);
-homeButtons.addButton(b3);
-homeButtons.addButton(b4);
+  // Input Buttons
+  homeButtons.addButton(b2);
+  homeButtons.addButton(b1);
+  homeButtons.addButton(b3);
+  homeButtons.addButton(b4);
+  
+  awayButtons.addButton(b5);
+  awayButtons.addButton(b6);
+  awayButtons.addButton(b7);
+  awayButtons.addButton(b8);
 
-awayButtons.addButton(b5);
-awayButtons.addButton(b6);
-awayButtons.addButton(b7);
-awayButtons.addButton(b8);
-
-timerButtons.addButton(b9);
-timerButtons.addButton(b10);
-timerButtons.addButton(b11);
-timerButtons.addButton(b12);
+  timerButtons.addButton(b9);
+  timerButtons.addButton(b10);
+  timerButtons.addButton(b11);
+  timerButtons.addButton(b12);
+}
 
 \end{lstlisting}
 
 I used three analog inputs to control twelve digital inputs, called buttons in the program. 
 For each analog input there is a callback function: \code{handleHomeButtons}, \code{handleAwayButtons}  
-and \code{handleTimerButtons}. In these functions is implemented the control logic for each buttons.
-Some of the buttons have an \code{HELD\_DURATION} options: these inputs must be held for some seconds to
-become active.
+and \code{handleTimerButtons}. In these functions the control logic for each buttons is implemented.
+Some of the buttons have an \code{HELD\_DURATION} options: these inputs must be held for some seconds to become active.
+
+The third dependence library has been introduced along with the support for wireless communication, and is the SoftwareSerial\footnote{\url{http://arduino.cc/en/Reference/SoftwareSerial}} 
+library, which is base on the NewSoftwareSerial library \footnote{\url{http://arduiniana.org/libraries/NewSoftSerial/}}. 
+The communication between the receiving Xbee and Arduino is done via a serial link, supported by Arduino with 
+the hardware serial port (digital IO 0 - 1), but those IO pins are needed also to communicate with a PC for example to debug the 
+program. I didn't want to loose the \emph{only} debug chance that I had (the serial interface) so I used the software serial library 
+which is able to emulate the RX and TX pins on any Arduino pin. The configuration is really easy:
+
+%
+\begin{lstlisting}[label=lis:softserial-config,caption=SoftwareSerial configuration]
+// Xbee serial communication
+#define SOFT_SERIAL_IN          6
+#define SOFT_SERIAL_OUT         7
+
+// Software serial input port (from Xbee)
+SoftwareSerial xbeeSerial(SOFT_SERIAL_IN, SOFT_SERIAL_OUT);
+
+void setup() {
+  ...
+  
+  // Set the data rate for the SoftwareSerial port
+  xbeeSerial.begin(19200);
+}
+
+\end{lstlisting}
+
 
 
 \subsection{Main control program}
@@ -453,25 +755,44 @@ functions to manage the EEPROM memory.
 %
 \begin{lstlisting}[label=lis:main-structure,caption=Main program structure]
 
-void handleHomeButtons(int id, boolean held) {}
+void configureAnalogB();
 
-void handleAwayButtons(int id, boolean held) {}
+// Handle home buttons pressed
+void handleHomeButtons(int id, boolean held);
 
-void handleTimerButtons(int id, boolean held) {}
+// Handle away buttons pressed and setup mode
+void handleAwayButtons(int id, boolean held);
 
-void handleTime() {}
+// Handle timer buttons pressed and setup mode
+void handleTimerButtons(int id, boolean held);
 
 // #########################################################
 // ####### EEPROM wear leveling algorithm functions ########
 // #########################################################
 
-void resetEEPROM() {}
+// EEPROM wear leveling algorithm prototypes
+// Seek for the first writable cells in the EEPROM  i.e. the first cell counter
+// with value smaller than EEPROM_MAX_WRITE
+boolean initializeEEPROM();
 
-boolean initializeEEPROM() {}
+// Write to the EEPROM cell with offset "offsetEE" and counter "counterEE" the
+// actual value of score and time variables.
+boolean writeEEPROM();
 
-boolean writeEEPROM() {}
+// Read from the EEPROM cell with offset "offsetEE" and counter "counterEE" the
+// stored value of score and time variables.
+void readEEPROM();
 
-void printEEPROM() {}
+// Prints on the serial interface the contents of all the EEPROM cells
+void printEEPROM();
+
+// Buzzer managament: end of period or manual activation
+void buzzer(boolean activation);
+
+void setupDiplay();
+
+// Handle serial communication with Xbee
+void xbeeSerialCom(boolean debug);
 
 // ========================================================
 // |                        SETUP                         |
@@ -526,63 +847,25 @@ int main(void)
 
 \subsubsection{Input enable} \label{subsubsec:input-enable}
 
-The digital inputs are mapped to the Arduino analog inputs through the board described in section 
-\ref{subsec:contro-panel}. On the board the input are kept low with a pull down resistor. This means 
-that when the input cable is disconnected the analog inputs are not connected to anything and they 
-are not kept low! Thus the integer value read by Arduino is a random value between 0 and 1023.
-This result in some weird behavior of the scoreboard like self-increasing score and timer disturbance 
-because of the fake input. 
+In the old scoreboard version, the digital inputs were mapped to the Arduino analog inputs through the 
+board described in section \ref{subsec:contro-panel}. On this board the input are kept low with a pull 
+down resistor. This means that when the input cable is disconnected the analog inputs were not connected 
+to anything and they were not kept low! Thus the integer value read by Arduino was a random value between 
+0 and 1023. This result was some weird behavior of the scoreboard like self-increasing score and timer 
+disturbance because of the fake input.
 
-To fix this issue I had to realize a software check that, with some limitation, control the actual values 
-of the analog inputs and disable the input when all three analog values are different than zero. This 
-situation is met only when the cable is disconnected or when the user pushes at least one button on each 
-row on the control panel (each row is connected to an analog input). The latter is again a dangerous 
-situation so the input are going to be disable in both cases.
-When all the three analog value are equal to zero the analog inputs are re-enabled, because this means that 
-cable has been reconnected and the pull down resistors are working correctly.
-The control sequence is implemented in the \code{loop()} function and is shown in listing \ref{lis:main-input}:
-%
-\begin{lstlisting}[label=lis:main-input,caption=Main program from Arduino library]
+The new version of the application itself uses an Xbee to read the actual analog values on the buttons lines,
+and the Xbee is constantly connected to the control panel board, so this is not a problem any more! 
 
-// Analog input not connected
-if (!inputEnable) {
-  int homeAnalogValue = analogRead(HOME_ANALOG_INPUT);
-  // Delay before the next analogRead, for the analog-to-digital converter
-  // to settle after the last reading
-  delay(10);
-  int awayAnalogValue = analogRead(AWAY_ANALOG_INPUT);
-  delay(10);
-  int timerAnalogValue = analogRead(TIMER_ANALOG_INPUT);
-  delay(4);
-
-  // This check works only if the analog input are kept low with a pull down
-  // resistor!
-  if (homeAnalogValue == 0 && awayAnalogValue == 0 && timerAnalogValue == 0) {
-    inputEnable = true;
-  }
-} else {
-  // Analog input connected, check for buttons pressed
-  homeButtons.checkButtons();
-  awayButtons.checkButtons();
-  timerButtons.checkButtons();
-
-  int homeAnalogValue = homeButtons.analogValue();
-  int awayAnalogValue = awayButtons.analogValue();
-  int timerAnalogValue = timerButtons.analogValue();
-
-  // The analog inputs have been disconnected: "random" value will be on
-  // each analog port (usually much greater than 0)
-  if (homeAnalogValue != 0 && awayAnalogValue != 0 && timerAnalogValue != 0) {
-    inputEnable = false;
-  }
-}
-\end{lstlisting}
-
-At the initialization the input are disabled and after they are constantly checked by using the Arduino 
-API and the AnalogButtons library.
-There is still a problems with this type of digital-to-analog inputs: when the user pushes two buttons 
-of different row some weird behavior can happen, but after some tests of the scoreboard for many matches I 
-can say this is not a real problem. Anyway this is not fixable with a software approach, instead a careful
+Anyway, the Arduino source code must constantly read analog values from the sensor for the input to work correctly, 
+but this means that the Xbee radio should be always active. The battery drain in this case is unacceptable.
+To preserve battery life, the Xbee is only waken up when necessary, and is kept awake for the minimum amount of time 
+needed to transmit also the logical value 0 when the user releases all the buttons. In this way the code running on 
+Arduino can reset it internal condition and be ready for the next button that will be pressed. 
+ 
+There is still a problems with this type of digital-to-analog inputs: when the user pushes two or more buttons 
+of different row at the same time some weird behavior can happen, but after some tests of the scoreboard for many 
+games I can say this is not a real problem. Anyway this is not fixable with a software approach, instead a careful
 choice of the resistors values is necessary to avoid such problems. 
 
 
@@ -886,9 +1169,178 @@ EEPROM at a specified offset, and the latter prints the EEPROM content to the se
 state of the memory, for debug purpose.
 
 
+\subsection{Wireless Extension}\label{subsec:sw-wireless}
+
+This wireless version of the project requires some custom functions in both the ATtiny MCU on the transmitter and 
+on the Arduino at the receiving site.
+
+\subsubsection{ATtiny code}\label{subsubsec:sw-attiny}
+
+The ATtiny main code is shown in listing \ref{lis-attiny}: it simply setup a pin in output mode to put the Xbee 
+to sleep, setup the watchdog interrupt, and setup some internal registers value to reduce power consumption.
+The \code{loop} function scans for some button pressed with a minimum analog threshold, and in case at least 
+one button is pressed, the Xbee is waken up with a low output on the \code{WAKE\_OUTPUT} pin.
+
+
+%
+\begin{lstlisting}[label=lis-attiny,caption=ATtiny main code]
+void system_sleep() {
+  cbi(ADCSRA, ADEN);                     // Switch Analog to Digitalconverter OFF
+  set_sleep_mode(SLEEP_MODE_PWR_DOWN);   // Sleep mode is set here
+  sleep_enable();
+  sleep_mode();                          // System actually sleeps here
+  sleep_disable();                       // System continues execution here when
+                                         // watchdog timed out
+  sbi(ADCSRA, ADEN);                     // Switch Analog to Digitalconverter ON
+}
+
+// Watchdog Interrupt Service Routine
+ISR(WDT_vect) {
+  wdCount++;
+}
+
+// ========================================================
+// |                        SETUP                         |
+// ========================================================
+
+void setup() {
+  pinMode(WAKE_OUTPUT, OUTPUT);
+  digitalWrite(WAKE_OUTPUT, HIGH);
+
+  // Setup watchdog timeout
+  setup_watchdog(0);
+
+  // Set the internal registers to reduce power consumes
+  PRR &= ~(1<<PRTIM1);                   // Shut down the timer1
+  ACSR = (1<<ACD);                       // Shut down the analog comparator
+  MCUCR |= (1<<BODS);                    // BOD disabled
+
+} // End of setup
+
+// ========================================================
+// |                        LOOP                          |
+// ========================================================
+
+void loop() {
+
+  system_sleep();                        // Send the unit to sleep
+
+  boolean pressedHome = (analogRead(HOME_ANALOG_INPUT) > MIN_ANA_TH);
+  boolean pressedAway = (analogRead(AWAY_ANALOG_INPUT) > MIN_ANA_TH);
+  boolean pressedTimer = (analogRead(TIMER_ANALOG_INPUT) > MIN_ANA_TH);
+
+  if (pressedHome || pressedAway || pressedTimer) {
+    digitalWrite(WAKE_OUTPUT, LOW);
+    wdCount = 0;
+  } else if (wdCount >= WD_CMP_MATCH) {
+    digitalWrite(WAKE_OUTPUT, HIGH);
+    wdCount = 0;
+  }
+
+} // End of loop
+
+\end{lstlisting}
+
+The \code{wdCount} variable is incremented by the watchdog interrupt; in case no buttons is pressed, after 
+\code{WD\_CMP\_MATCH} interrupt fired the MCU will write high on the output, letting the Xbee sleep again.
+The watchdog timeout and the \code{WD\_CMP\_MATCH} count are chosen in such a way that the Xbee will stay 
+awake for the necessary amount of time to sample the analog input, build the package and send it. 
+The expression is:
+
+\[
+wdCount \; * \; wdInterval \geq xBeeTX \; * \; xBeeIR
+\]
+
+Where $xBeeTX$ and $xBeeIR$ are the xBee configuration parameters TX (sample before transmission) and IR (sample 
+rate in ms). In this application the values are: $5 \; * \; 16ms \geq 2 \; * \; 40ms$.
+Thus, after the buttons have been released, the Xbee will be awake for at least other 80ms, and will send another 
+package with the sampled values equal to 0. In this way the Arduino code can recognise that no button is pressed 
+any more.
+
+
+\subsubsection{Arduino code}\label{subsubsec:sw-arduino}
+
+The Arduino main code has been modified to add a function, \code{xbeeSerialCom()}, used to parse serial data coming 
+from the Xbee. The listing \ref{lis-arduino} shows the method without debugging flags: 
+
+%
+\begin{lstlisting}[label=lis-arduino,caption=Arduino main code: xbeeSerialCom function]
+void xbeeSerialCom() {
+  int xbeeDel = 0x7E;
+  int car = 0;
+  int frameType = 0;
+  int sourceAdr = 0;
+  int sampleN = 0;
+  int analogReadings[N_ANALOG_INPUT];
+
+  if (xbeeSerial.available() >= 18) {
+
+    // Seek for the frame delimiter "xbeeDel", -1 indicates empty serial buffer
+    while ((car = xbeeSerial.read()) != xbeeDel) {
+      if (car == -1) {
+        return;
+      }
+    }
+
+    // Reading API frame type 83 header
+    for (byte i = 2; i <= 8; ++i) {
+      car = xbeeSerial.read();
+
+      if (i== 4) {
+        frameType = car;
+        if (frameType == 97) {
+          return;
+        }
+      } else if (i == 6) {
+        sourceAdr = car;
+      }
+    }
+
+    // Reading header of IO data frame
+    // Reading number of samples
+    sampleN = xbeeSerial.read();
+
+    // Reading IO channel enabled mask: not used
+    car = xbeeSerial.read();
+  
+    // Reading 0 byte
+    car = xbeeSerial.read();
+
+    // Reading paylod: only ADC values
+    int msb[N_ANALOG_INPUT], lsb[N_ANALOG_INPUT];
+    for (byte j = 0; j < sampleN; ++j) {
+
+      for (byte i = 0; i < N_ANALOG_INPUT; ++i) {
+        msb[i] = xbeeSerial.read();
+        lsb[i] = xbeeSerial.read();
+        analogReadings[i] = lsb[i] + (msb[i] * 256);
+      }
+	  
+      // Analog input received, check for buttons pressed
+      // only if the Xbee source address is recognized
+      if (sourceAdr == XBEE_SOURCE_ADR) {
+        homeButtons.checkValue(analogReadings[0]);
+        awayButtons.checkValue(analogReadings[1]);
+        timerButtons.checkValue(analogReadings[2]);
+      }
+    }
+    // Reading checksum - at the end of the frame
+    car = xbeeSerial.read();
+  }
+}
+\end{lstlisting}
+
+Rows 12-16 read every character until the start frame delimiter, \code{0x7E}.
+Rows 19-30 read every character in the API frame header. The IO data parsing begins at line 32: number of samples,
+digital IO mask, and analog values in the form of 2 byte for each analog input.
+On line 54 a security check is made, to verify the source Xbee 16bit address.
+On lines 55-57 the \code{AnalogButtonsGeneral::checkvalue()} method is called, once for 
+each analog line, to check the current analog value and if a buttons is pressed.
+
+
 \subsection{Volleyball mode}
 
-In a recent release (v1.0.2) the volleyball mode has been implemented. This was done on requested from a volleyball 
+In a recent release sthe volleyball mode has been implemented. This was done upon request from the volleyball 
 coach, so I tried to adapt the software without touching the hardware (the scoreboard is already mounted on the wall 
 by now). The new mode simply changes the meaning of some displays in a way that is better suited for a volleyball 
 match.

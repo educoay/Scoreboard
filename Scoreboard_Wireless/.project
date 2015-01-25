@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>ScoreBoard_Wireless</name>
+	<name>ScoreBoard</name>
 	<comment></comment>
 	<projects>
 		<project>AnalogButtons</project>
 		<project>DisplayGroup</project>
-		<project>DisplayGroupPrototype</project>
 		<project>TimedAction</project>
+		<project>AnalogButtonsGeneral</project>
+		<project>SoftwareSerial</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
