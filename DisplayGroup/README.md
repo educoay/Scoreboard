@@ -1,5 +1,5 @@
 # DISPLAYGROUP library
-**version 1.0**                                    
+**version 1.0.0**                                    
 
 This C++ library provides an easy way to manage many 7-segments display in an Arduino application, 
 organized in display group to show number of any length.
