@@ -32,7 +32,7 @@
 								<option id="de.innot.avreclipse.compiler.option.optimize.2043269490" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.incpath.1371932862" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}&quot;"/>
-									<listOptionValue builtIn="false" value="/opt/arduino/hardware/arduino/cores/tiny"/>
+									<listOptionValue builtIn="false" value="/opt/arduino/hardware/tools/avr/lib/avr/include/avr"/>
 								</option>
 								<option id="de.innot.avreclipse.compiler.option.allwarn.1969364352" name="All Warnings (-Wall)" superClass="de.innot.avreclipse.compiler.option.allwarn" value="true" valueType="boolean"/>
 								<inputType id="de.innot.avreclipse.compiler.winavr.input.2068221867" name="C Source Files" superClass="de.innot.avreclipse.compiler.winavr.input"/>
@@ -42,7 +42,7 @@
 								<option id="de.innot.avreclipse.cppcompiler.option.optimize.370370800" name="Optimization Level" superClass="de.innot.avreclipse.cppcompiler.option.optimize" value="de.innot.avreclipse.cppcompiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.incpath.75088546" name="Include Paths (-I)" superClass="de.innot.avreclipse.cppcompiler.option.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}&quot;"/>
-									<listOptionValue builtIn="false" value="/opt/arduino/hardware/arduino/cores/tiny"/>
+									<listOptionValue builtIn="false" value="/opt/arduino/hardware/tools/avr/lib/avr/include/avr"/>
 								</option>
 								<option id="de.innot.avreclipse.cppcompiler.option.otherflags.1907272780" name="Other flags" superClass="de.innot.avreclipse.cppcompiler.option.otherflags" value="-ffunction-sections -fdata-sections -fno-use-cxa-atexit -Wno-unused-local-typedefs" valueType="string"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.def.552897805" name="Define Syms (-D)" superClass="de.innot.avreclipse.cppcompiler.option.def" valueType="definedSymbols">
@@ -129,6 +129,7 @@
 								<option id="de.innot.avreclipse.cppcompiler.option.optimize.1484161780" name="Optimization Level" superClass="de.innot.avreclipse.cppcompiler.option.optimize" value="de.innot.avreclipse.cppcompiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.incpath.467865628" name="Include Paths (-I)" superClass="de.innot.avreclipse.cppcompiler.option.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}&quot;"/>
+									<listOptionValue builtIn="false" value="/opt/arduino/hardware/tools/avr/lib/avr/include/avr"/>
 									<listOptionValue builtIn="false" value="/opt/arduino/hardware/arduino/cores/arduino"/>
 									<listOptionValue builtIn="false" value="/opt/arduino/hardware/arduino/variants/standard"/>
 								</option>
