@@ -19,7 +19,7 @@
  * Xbee controller main file.
  * ATTiny85V source code.
  * Scoreboard Project - Wireless branch.
- * version 0.85
+ * version 1.0.0
  */
 
 #include <Arduino.h>
