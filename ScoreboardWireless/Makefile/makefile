@@ -4,7 +4,7 @@ ARDUINO_DIR=/opt/arduino
 PROJECT_DIR=..
 DISPLAYGROUP_DIR=../../DisplayGroup
 ANALOG_BUT_DIR=../../AnalogButtonsGeneral
-SOFTSERIAL_DIR=../../SoftwareSerial
+SOFTSERIAL_DIR=../../../Utility/SoftwareSerial
 
 # avr tools path
 AVR_OBJCOPY=avr-objcopy
