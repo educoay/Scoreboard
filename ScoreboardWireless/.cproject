@@ -32,6 +32,7 @@
 								<option id="de.innot.avreclipse.compiler.option.optimize.290734526" name="Optimization Level" superClass="de.innot.avreclipse.compiler.option.optimize" value="de.innot.avreclipse.compiler.optimize.size" valueType="enumerated"/>
 								<option id="de.innot.avreclipse.compiler.option.incpath.1798488747" name="Include Paths (-I)" superClass="de.innot.avreclipse.compiler.option.incpath" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/SoftwareSerial}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/DisplayGroup}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/AnalogButtonsGeneral}&quot;"/>
 									<listOptionValue builtIn="false" value="/opt/arduino/hardware/arduino/cores/arduino"/>
@@ -68,7 +69,7 @@
 								<option id="de.innot.avreclipse.cpplinker.option.libpath.1930313822" name="Libraries Path (-L)" superClass="de.innot.avreclipse.cpplinker.option.libpath" valueType="stringList">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/DisplayGroup/Debug}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/AnalogButtonsGeneral/Release}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/SoftwareSerial/Release}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/SoftwareSerial/Arduino}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Lib}&quot;"/>
 								</option>
 								<option id="de.innot.avreclipse.cpplinker.option.otherlinkargs.1120753386" name="Other Arguments" superClass="de.innot.avreclipse.cpplinker.option.otherlinkargs" value="-Wl,-gc-sections " valueType="string"/>
@@ -95,7 +96,7 @@
 					<externalSetting/>
 				</externalSettings>
 				<externalSettings containerId="AnalogButtonsGeneral;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
-				<externalSettings containerId="SoftwareSerial;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
+				<externalSettings containerId="SoftwareSerial;de.innot.avreclipse.configuration.lib.release.106305086" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
 			</storageModule>
 		</cconfiguration>
 		<cconfiguration id="de.innot.avreclipse.configuration.app.debug.381805049.946985317">

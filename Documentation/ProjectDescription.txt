@@ -1,0 +1,9 @@
+Hello, my project is a scoreboard for basketball/volleyball games, made with Arduino UNO and big even segments display. 
+I realized everything by hand, from the wood structure to the electrical wirings, to the Arduino control program, which supports the C++ Standard library for AVR MCUs.
+A C++ library is used to dynamically configure the displays, with display grouping and value padding. Display with different segments code can live on the same data bus, with an easy configuration.
+The scoreboard has been used for more than 2 year by "real users", in real basketball championship! It is controlled by a small panel, which was wired to the board, but recently I had to implement wireless communication with Xbee, because of different rules in the new championship the team is going to play in this year!
+Even volleyball mode is supported, with change of the scoreboard mode on the fly, without losing the actual score.
+This score is automatically retained in EEPROM memory and can be restored with a button press, in case of power loss.
+Even a real car horn is mounted to signal the end of the period!! :) 
+On the Google code site you can find link to the software and hardware documentation (in the svn repo), data sheets, pictures, drafts, Xbee configurations... etc..   
+Thank you for this opportunity to get visibility for my project!
