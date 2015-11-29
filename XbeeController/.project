@@ -3,9 +3,6 @@
 	<name>XbeeController</name>
 	<comment></comment>
 	<projects>
-		<project>AnalogButtonsGeneral</project>
-		<project>DisplayGroup</project>
-		<project>SoftwareSerial</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

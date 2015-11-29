@@ -80,13 +80,7 @@
 					</sourceEntries>
 				</configuration>
 			</storageModule>
-			<storageModule moduleId="org.eclipse.cdt.core.externalSettings">
-				<externalSettings containerId="AnalogButtonsGeneral;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
-				<externalSettings containerId="DisplayGroup;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier">
-					<externalSetting/>
-				</externalSettings>
-				<externalSettings containerId="SoftwareSerial;" factoryId="org.eclipse.cdt.core.cfg.export.settings.sipplier"/>
-			</storageModule>
+			<storageModule moduleId="org.eclipse.cdt.core.externalSettings"/>
 		</cconfiguration>
 		<cconfiguration id="de.innot.avreclipse.configuration.app.debug.381805049.216597436">
 			<storageModule buildSystemId="org.eclipse.cdt.managedbuilder.core.configurationDataProvider" id="de.innot.avreclipse.configuration.app.debug.381805049.216597436" moduleId="org.eclipse.cdt.core.settings" name="Release">
