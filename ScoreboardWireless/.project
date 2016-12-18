@@ -3,11 +3,12 @@
 	<name>ScoreBoardWireless</name>
 	<comment></comment>
 	<projects>
-		<project>AnalogButtons</project>
-		<project>DisplayGroup</project>
-		<project>TimedAction</project>
 		<project>AnalogButtonsGeneral</project>
+		<project>ArduinoCore</project>
+		<project>AVR-STL</project>
+		<project>DisplayGroup</project>
 		<project>SoftwareSerial</project>
+		<project>TimedAction</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
