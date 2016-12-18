@@ -4,6 +4,8 @@
 	<comment></comment>
 	<projects>
 		<project>AnalogButtons</project>
+		<project>ArduinoCore</project>
+		<project>AVR-STL</project>
 		<project>DisplayGroup</project>
 		<project>DisplayGroupPrototype</project>
 		<project>TimedAction</project>
