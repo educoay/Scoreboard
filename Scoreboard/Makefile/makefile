@@ -1,14 +1,15 @@
 CXX=avr-g++
 
-ARDUINO_DIR=/opt/arduino
+ARDUINO_DIR=/home/gionata/workspace_Arduino/Core/ArduinoCore/
+STL_DIR=/home/gionata/workspace_Arduino/Libraries/AVR-STL/include/
 PROJECT_DIR=..
-DISPLAYGROUP_DIR=../../DisplayGroup
-ANALOG_BUT_DIR=../../AnalogButtons
+DISPLAYGROUP_DIR=/home/gionata/workspace_Arduino/Libraries/DisplayGroup/
+ANALOG_BUT_DIR=/home/gionata/workspace_Arduino/Libraries/AnalogButtons/
 
 # avr tools path
 AVR_OBJCOPY=avr-objcopy
 AVR_SIZE=avr-size
-AVRDUDE=$(ARDUINO_DIR)/hardware/tools/avrdude
+AVRDUDE=/opt/arduino/hardware/tools/avrdude
 
 
 # CPU type and speed
@@ -20,17 +21,13 @@ PORT=/dev/ttyACM0
 
 
 # Include (dependencies: displaygroup, timedaction, analogbuttons, avr-stl, arduino)
-INCLUDE=-I$(DISPLAYGROUP_DIR)\
--I$(ANALOG_BUT_DIR)\
--I$(ARDUINO_DIR)/hardware/tools/avr/avr-stl/include\
--I$(ARDUINO_DIR)/hardware/arduino/variants/standard\
--I$(ARDUINO_DIR)/hardware/arduino/cores/arduino
+INCLUDE=-I$(DISPLAYGROUP_DIR) -I$(ANALOG_BUT_DIR) -I$(STL_DIR) -I$(ARDUINO_DIR)
 
 # Libraries (dependencies: displaygroup, timedaction, analogbuttons, core)
 LIBS=-L$(DISPLAYGROUP_DIR)/Makefile\
 -L$(ANALOG_BUT_DIR)/Release\
--L$(PROJECT_DIR)/Lib\
--ldisplaygroup -lanalogbuttons -lcore
+-L$(ARDUINO_DIR)/Arduino_Uno\
+-ldisplaygroup -lanalogbuttons -lunocore
 
 # Source file and application name
 OBJ=main
@@ -65,7 +62,7 @@ $(TARGET).elf: $(OBJ).o
 	
 upload:
 	@echo 'Invoking: AVRDude'
-	$(AVRDUDE) -pm328p -carduino -P$(PORT) -b115200 -Uflash:w:$(TARGET).hex:a
+	$(AVRDUDE) -C $(AVRDUDE).conf -pm328p -carduino -P$(PORT) -b115200 -Uflash:w:$(TARGET).hex:a
 	@echo 'Finished building: $@'
 	@echo ' '
 	
