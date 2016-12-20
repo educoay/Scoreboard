@@ -86,11 +86,6 @@
 							<tool command="${AVRDUDEPATH}avrdude" commandLinePattern="${COMMAND} ${FLAGS}" errorParsers="" id="de.innot.avreclipse.tool.avrdude.app.debug.1757641051" name="AVRDude" superClass="de.innot.avreclipse.tool.avrdude.app.debug"/>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="de.innot.avreclipse.configuration.app.debug.381805049.946985317.1679794773.1361249649" name="main.cpp" rcbsApplicability="disable" resourcePath="main.cpp" toolsToInvoke="de.innot.avreclipse.tool.cppcompiler.app.debug.792495265.1932504750">
-						<tool id="de.innot.avreclipse.tool.cppcompiler.app.debug.792495265.1932504750" name="AVR C++ Compiler" superClass="de.innot.avreclipse.tool.cppcompiler.app.debug.792495265">
-							<inputType id="de.innot.avreclipse.cppcompiler.input.146287504" superClass="de.innot.avreclipse.cppcompiler.input"/>
-						</tool>
-					</fileInfo>
 					<sourceEntries>
 						<entry excluding="Prototype/makefile (Case Conflict 1)|Makefile|Debug/makefile (Case Conflict 1)" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>
@@ -240,7 +235,7 @@
 								</option>
 								<option id="de.innot.avreclipse.cppcompiler.option.otherflags.1541701920" name="Other flags" superClass="de.innot.avreclipse.cppcompiler.option.otherflags" value="-ffunction-sections -fdata-sections -fno-use-cxa-atexit -Wno-unused-local-typedefs" valueType="string"/>
 								<option id="de.innot.avreclipse.cppcompiler.option.def.155415989" name="Define Syms (-D)" superClass="de.innot.avreclipse.cppcompiler.option.def" valueType="definedSymbols">
-									<listOptionValue builtIn="false" value="DEBUG"/>
+									<listOptionValue builtIn="false" value="DEBUG=1"/>
 								</option>
 								<inputType id="de.innot.avreclipse.cppcompiler.input.1737902570" superClass="de.innot.avreclipse.cppcompiler.input"/>
 							</tool>
@@ -270,11 +265,6 @@
 							<tool command="${AVRDUDEPATH}avrdude" commandLinePattern="${COMMAND} ${FLAGS}" errorParsers="" id="de.innot.avreclipse.tool.avrdude.app.debug.1494221010" name="AVRDude" superClass="de.innot.avreclipse.tool.avrdude.app.debug"/>
 						</toolChain>
 					</folderInfo>
-					<fileInfo id="de.innot.avreclipse.configuration.app.debug.381805049.216597436.683383327.1951143480" name="main.cpp" rcbsApplicability="disable" resourcePath="main.cpp" toolsToInvoke="de.innot.avreclipse.tool.cppcompiler.app.debug.1333947233.178459052">
-						<tool id="de.innot.avreclipse.tool.cppcompiler.app.debug.1333947233.178459052" name="AVR C++ Compiler" superClass="de.innot.avreclipse.tool.cppcompiler.app.debug.1333947233">
-							<inputType id="de.innot.avreclipse.cppcompiler.input.1486098070" superClass="de.innot.avreclipse.cppcompiler.input"/>
-						</tool>
-					</fileInfo>
 					<sourceEntries>
 						<entry excluding="Prototype/makefile (Case Conflict 1)|Makefile|Debug/makefile (Case Conflict 1)" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name=""/>
 					</sourceEntries>

@@ -236,19 +236,19 @@ DisplayGroup::DisplayManager disManager(PIN_COM_DATA, PIN_COM_CLOCK, PIN_OUTPUT_
 // #########################################################
 // Configuration of digital buttons on the analog interface
 
-AnalogButtons homeButtons(HOME_ANALOG_INPUT, DEBOUNCING_COUNT_HOME, &handleHomeButtons);
+AnalogButtons homeButtons(DEBOUNCING_COUNT_HOME, &handleHomeButtons);
 Button b1 = Button(HOME_P1, bAVal[0], bAVal[1]);
 Button b2 = Button(HOME_P2, bAVal[2], bAVal[3]);
 Button b3 = Button(HOME_P3, bAVal[4], bAVal[5]);
 Button b4 = Button(HOME_M1, bAVal[6], bAVal[7]);
 
-AnalogButtons awayButtons(AWAY_ANALOG_INPUT, DEBOUNCING_COUNT, &handleAwayButtons);
+AnalogButtons awayButtons(DEBOUNCING_COUNT, &handleAwayButtons);
 Button b5 = Button(AWAY_P1, bAVal[0], bAVal[1]);
 Button b6 = Button(AWAY_P2, bAVal[2], bAVal[3]);
 Button b7 = Button(AWAY_P3, bAVal[4], bAVal[5]);
 Button b8 = Button(AWAY_M1, bAVal[6], bAVal[7]);
 
-AnalogButtons timerButtons(TIMER_ANALOG_INPUT, DEBOUNCING_COUNT, &handleTimerButtons);
+AnalogButtons timerButtons(DEBOUNCING_COUNT, &handleTimerButtons);
 Button b9 = Button(TIMER_START_STOP, bAVal[0], bAVal[1]);
 Button b10 = Button(TIMER_RESET, bAVal[2], bAVal[3], HELD_DURATION);
 Button b11 = Button(PERIOD_P1, bAVal[4], bAVal[5]);
@@ -267,8 +267,10 @@ void configureAnalogB() {
 void handleHomeButtons(int id, boolean held) {
 
 #ifdef DEBUG
-  Serial.println("HOME = ");
-  Serial.println(id);
+  Serial.print("HOME = ");
+  Serial.print(id);
+  Serial.print(",  HELD = ");
+  Serial.println(held);
 #endif
 
   updateDisplay = true;
@@ -385,8 +387,10 @@ void handleAwayButtons(int id, boolean held) {
   unsigned char sreg;
 
 #ifdef DEBUG
-  Serial.println("AWAY = ");
-  Serial.println(id);
+  Serial.print("AWAY = ");
+  Serial.print(id);
+  Serial.print(",  HELD = ");
+  Serial.println(held);
 #endif
 
   if (setupMode && volleyMode) {
@@ -493,8 +497,10 @@ void handleTimerButtons(int id, boolean held) {
   unsigned char sreg;
 
 #ifdef DEBUG
-  Serial.println("TIMER = ");
-  Serial.println(id);
+  Serial.print("TIMER = ");
+  Serial.print(id);
+  Serial.print(",  HELD = ");
+  Serial.println(held);
 #endif
 
   updateDisplay = true;
@@ -915,13 +921,13 @@ void loop() {
     }
   } else {
     // Analog input connected, check for buttons pressed
-    homeButtons.checkButtons();
-    awayButtons.checkButtons();
-    timerButtons.checkButtons();
+    int homeAnalogValue = analogRead(HOME_ANALOG_INPUT);
+    int awayAnalogValue = analogRead(AWAY_ANALOG_INPUT);
+    int timerAnalogValue = analogRead(TIMER_ANALOG_INPUT);
 
-    int homeAnalogValue = homeButtons.analogValue();
-    int awayAnalogValue = awayButtons.analogValue();
-    int timerAnalogValue = timerButtons.analogValue();
+    homeButtons.checkValue(homeAnalogValue);
+    awayButtons.checkValue(awayAnalogValue);
+    timerButtons.checkValue(timerAnalogValue);
 
 #ifdef DEBUG
   Serial.print("ANALOG V = ");
