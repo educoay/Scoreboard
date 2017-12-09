@@ -3,6 +3,7 @@
 	<name>XbeeController</name>
 	<comment></comment>
 	<projects>
+		<project>ATTinyCore</project>
 		<project>AttinyCore</project>
 	</projects>
 	<buildSpec>
